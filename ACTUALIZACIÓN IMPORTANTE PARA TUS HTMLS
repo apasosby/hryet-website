@@ -1,0 +1,5 @@
+<!-- Conectar el diseño -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Conectar la lógica (esta línea va al final, antes de </body>) -->
+<script src="main.js"></script>
