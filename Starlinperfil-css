@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRYET | Wear Your Identity - Tienda Oficial</title>
+    <!-- Fuentes y Iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eb42c38520.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA DE ENVÍO GRATIS -->
+    <div class="top-bar">
+        ENVÍOS A TODO EL MUNDO • DISEÑOS EXCLUSIVOS • PAGOS SEGUROS
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <header class="main-header">
+        <div class="logo">HRYET</div>
+        <nav>
+            <a href="índice.html" class="active">INICIO</a>
+            <a href="#coleccion">COLECCIÓN</a>
+            <a href="PAGEditar.html">PERSONALIZA</a>
+            <a href="#tecnologia">QR INTELIGENTE</a>
+            <a href="#">SOBRE HRYET</a>
+        </nav>
+        <div class="header-icons">
+            <i class="fas fa-search"></i>
+            <a href="PAGEditar.html"><i class="fas fa-user"></i></a>
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HERO (PORTADA) -->
+    <section class="hero-store">
+        <div class="hero-content">
+            <span class="brand-tag">HRYET ®</span>
+            <h1>WEAR YOUR <br> <span class="outline-text">IDENTITY</span></h1>
+            <p>No es solo una camisa. Es tu historia, tu música, tu mundo. Conéctate con un solo escaneo.</p>
+            <div class="hero-btns">
+                <a href="#coleccion" class="btn-white">COMPRAR AHORA →</a>
+                <a href="PAGEditar.html" class="btn-outline">PERSONALIZA LA TUYA ✦</a>
+            </div>
+            
+            <!-- Iconos de Confianza -->
+            <div class="trust-icons">
+                <div class="t-icon"><i class="fas fa-qrcode"></i> QR INTELIGENTE</div>
+                <div class="t-icon"><i class="fas fa-cut"></i> 100% PERSONALIZABLE</div>
+                <div class="t-icon"><i class="fas fa-gem"></i> CALIDAD PREMIUM</div>
+                <div class="t-icon"><i class="fas fa-shipping-fast"></i> ENVÍOS RÁPIDOS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLECCIÓN DESTACADA -->
+    <section id="coleccion" class="products-section">
+        <div class="section-title-group">
+            <h2>COLECCIÓN DESTACADA</h2>
+            <a href="#">VER TODA LA COLECCIÓN →</a>
+        </div>
+
+        <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <div class="badge">NUEVO</div>
+                <div class="img-container">
+                    <img src="img/hryet-black.jpg" alt="QR Black">
+                    <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                </div>
+                <div class="p-info">
+                    <h3>HRYET QR BLACK</h3>
+                    <p class="p-price">$45.00 USD</p>
+                    <div class="p-colors">
+                        <span class="c-dot black"></span>
+                        <span class="c-dot white"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div class="badge">BEST SELLER</div>
+                <div class="img-container">
+                    <img src="img/butterfly.jpg" alt="Butterfly">
+                    <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                </div>
+                <div class="p-info">
+                    <h3>HRYET BUTTERFLY</h3>
+                    <p class="p-price">$50.00 USD</p>
+                    <div class="p-colors"><span class="c-dot white"></span></div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <div class="badge">LIMITED</div>
+                <div class="img-container">
+                    <img src="img/essential.jpg" alt="Essential">
+                    <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                </div>
+                <div class="p-info">
+                    <h3>HRYET ESSENTIAL</h3>
+                    <p class="p-price">$45.00 USD</p>
+                    <div class="p-colors"><span class="c-dot cream"></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN TECNOLOGÍA QR -->
+    <section id="tecnologia" class="tech-info-section">
+        <div class="tech-container">
+            <div class="tech-text">
+                <span class="sub">TECNOLOGÍA HRYET</span>
+                <h2>QR INTELIGENTE</h2>
+                <p>Tu historia, un escaneo. Comparte lo que quieras al instante.</p>
+                <ul class="tech-list">
+                    <li><i class="fas fa-check-circle"></i> Enlace a tus redes sociales</li>
+                    <li><i class="fas fa-check-circle"></i> Tu música y playlist favorita</li>
+                    <li><i class="fas fa-check-circle"></i> Tu portafolio o trabajo</li>
+                    <li><i class="fas fa-check-circle"></i> Tu historia, tu marca</li>
+                </ul>
+                <a href="PAGEditar.html" class="btn-white">DESCUBRE MÁS ✦</a>
+            </div>
+            <div class="tech-image">
+                <img src="img/phone-mockup.png" alt="Smart QR Preview">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="f-col">
+                <h3>ÚNETE A HRYET</h3>
+                <p>Sé el primero en enterarte de lanzamientos exclusivos.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Tu correo electrónico">
+                    <button>→</button>
+                </div>
+            </div>
+            <div class="f-col">
+                <h4>HRYET</h4>
+                <a href="#">Sobre nosotros</a>
+                <a href="#">Sostenibilidad</a>
+            </div>
+            <div class="f-col">
+                <h4>AYUDA</h4>
+                <a href="#">Preguntas frecuentes</a>
+                <a href="#">Envíos y entregas</a>
+            </div>
+            <div class="f-col">
+                <div class="f-logo">HRYET</div>
+                <p>© 2026 HRYET. Todos los derechos reservados.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
