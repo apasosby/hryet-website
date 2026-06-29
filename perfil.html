@@ -1,0 +1,9 @@
+// Este código lee el nombre de la URL. 
+// Si entras a perfil.html?nombre=Alex, cambiará el texto.
+const urlParams = new URLSearchParams(window.location.search);
+const nombreUsuario = urlParams.get('nombre');
+
+if (nombreUsuario) {
+    document.querySelector('.profile-info h1').innerHTML = nombreUsuario + ' <span class="crown">👑</span>';
+    document.querySelector('.handle').innerText = '@' + nombreUsuario.toLowerCase() + '.hryet';
+}
