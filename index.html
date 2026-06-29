@@ -1,324 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HRYET | Wear Your Identity</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-
+    <title>HRYET | Tu Camiseta, Tu Red Social</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+        :root {
+            --primary: #fff;
+            --secondary: #888;
+            --accent: #00ff88; /* Color neón para la parte tecnológica/premios */
+            --bg: #000;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--primary); line-height: 1.6; overflow-x: hidden; }
 
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0, 0, 0, .45);
-            backdrop-filter: blur(12px);
-            z-index: 999;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; position: fixed; width: 100%; top: 0; z-index: 1000;
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-        }
+        .logo { font-size: 22px; font-weight: 900; letter-spacing: 6px; }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 35px;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: .3s;
-        }
-
-        nav a:hover {
-            opacity: .6;
-        }
-
-        /* Hero Section */
+        /* --- HERO --- */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url("https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1800&q=80");
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 0 8%; background: radial-gradient(circle at 10% 20%, #111 0%, #000 100%);
         }
 
-        .content h1 {
-            font-size: clamp(40px, 10vw, 90px);
-            letter-spacing: 12px;
-            text-transform: uppercase;
+        .hero-texto h1 {
+            font-size: clamp(40px, 7vw, 80px); font-weight: 900; text-transform: uppercase;
+            line-height: 1; margin-bottom: 20px;
         }
 
-        .content h2 {
-            margin-top: 20px;
-            font-weight: 300;
-            font-size: clamp(18px, 4vw, 30px);
-            letter-spacing: 4px;
+        .highlight { color: var(--accent); }
+
+        /* --- PASOS DEL PROCESO --- */
+        .steps {
+            padding: 100px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px; background: #050505;
         }
 
-        .content p {
-            margin: 30px auto;
-            max-width: 600px;
-            line-height: 1.8;
-            color: #ddd;
+        .step-card {
+            padding: 40px; border: 1px solid #111; text-align: center;
+            transition: var(--transition);
         }
+
+        .step-card:hover { border-color: var(--accent); background: #0a0a0a; }
+
+        .step-num {
+            font-size: 40px; font-weight: 900; color: #222; margin-bottom: 10px; display: block;
+        }
+
+        /* --- SECCIÓN DEL PERFIL (SIMULACIÓN) --- */
+        .profile-preview {
+            padding: 100px 8%; display: flex; align-items: center; gap: 50px; flex-wrap: wrap;
+        }
+
+        .phone-mockup {
+            width: 300px; height: 600px; background: #111; border: 8px solid #222;
+            border-radius: 40px; overflow: hidden; position: relative;
+            box-shadow: 0 20px 50px rgba(0,255,136,0.1);
+        }
+
+        .phone-header { height: 150px; background: url('IMG_5617.jpeg'); background-size: cover; }
+        .phone-content { padding: 20px; text-align: center; }
+        .phone-stats { display: flex; justify-content: space-around; margin: 20px 0; font-size: 12px; }
+        .like-btn { 
+            background: var(--accent); color: #000; padding: 10px 20px; 
+            border-radius: 20px; font-weight: bold; font-size: 14px;
+        }
+
+        /* --- RETO 10K --- */
+        .challenge {
+            background: var(--accent); color: #000; padding: 80px 8%; text-align: center;
+        }
+
+        .challenge h2 { font-size: clamp(30px, 5vw, 60px); font-weight: 900; text-transform: uppercase; }
+        .challenge p { font-size: 20px; font-weight: 600; margin-bottom: 30px; }
+
+        /* --- TIENDA --- */
+        .productos {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; padding: 100px 5%;
+        }
+
+        .producto { position: relative; background: #050505; padding-bottom: 20px; text-align: center; }
+        .producto img { width: 100%; aspect-ratio: 3/4; object-fit: cover; opacity: 0.7; transition: 0.3s; }
+        .producto:hover img { opacity: 1; }
 
         .btn {
-            display: inline-block;
-            margin-top: 45px;
-            padding: 18px 55px;
-            border: 2px solid white;
-            color: white;
-            text-decoration: none;
-            border-radius: 40px;
-            transition: .4s;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 2px;
+            display: inline-block; padding: 15px 35px; background: #fff; color: #000;
+            text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 12px;
+            margin-top: 20px;
         }
 
-        .btn:hover {
-            background: white;
-            color: black;
-        }
-
-        /* General Section Styling */
-        section {
-            padding: 100px 10%;
-        }
-
-        .title {
-            font-size: 35px;
-            margin-bottom: 60px;
-            text-align: center;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
-
-        /* Products Grid */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .card {
-            background: #111;
-            border-radius: 5px;
-            overflow: hidden;
-            transition: .4s;
-            border: 1px solid #222;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: #444;
-        }
-
-        .card img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-        }
-
-        .info {
-            padding: 25px;
-            text-align: center;
-        }
-
-        .info h3 {
-            margin-bottom: 12px;
-            font-weight: 400;
-            letter-spacing: 2px;
-        }
-
-        .price {
-            font-size: 20px;
-            margin: 15px 0;
-            color: #aaa;
-        }
-
-        .buy {
-            display: inline-block;
-            padding: 12px 35px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            border-radius: 0;
-            font-weight: bold;
-            font-size: 12px;
-            text-transform: uppercase;
-            transition: .3s;
-        }
-
-        .buy:hover {
-            background: #ccc;
-        }
-
-        /* About Section */
-        .about-text {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            line-height: 2;
-            font-size: 18px;
-            color: #bbb;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-container input {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            background: transparent;
-            border: 1px solid #333;
-            color: white;
-            outline: none;
-        }
-
-        /* Footer */
-        footer {
-            padding: 60px 10%;
-            text-align: center;
-            background: #050505;
-            color: #666;
-            border-top: 1px solid #111;
-        }
-
-        .socials {
-            margin-bottom: 20px;
-        }
-
-        .socials a {
-            color: #999;
-            margin: 0 15px;
-            text-decoration: none;
-        }
+        footer { padding: 50px; text-align: center; border-top: 1px solid #111; color: #444; }
 
         @media (max-width: 768px) {
-            header {
-                padding: 20px 5%;
-            }
-            nav {
-                display: none; /* Add a hamburger menu here for real projects */
-            }
+            .hero { text-align: center; }
+            .profile-preview { justify-content: center; }
         }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="logo">HRYET</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#shop">Shop</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header>
+    <div class="logo">HRYET</div>
+    <nav style="display: flex; gap: 20px;">
+        <a href="#proceso" style="color: white; text-decoration: none; font-size: 12px; font-weight: bold;">CÓMO FUNCIONA</a>
+        <a href="#tienda" style="color: white; text-decoration: none; font-size: 12px; font-weight: bold;">TIENDA</a>
+    </nav>
+</header>
 
-    <section class="hero">
-        <div class="content">
-            <h1>HRYET</h1>
-            <h2>Wear Your Identity</h2>
-            <p>Premium personalized apparel powered by QR technology. Luxury fashion merged with digital identity.</p>
-            <a class="btn" href="#shop">Explore Collection</a>
-        </div>
-    </section>
+<section class="hero">
+    <div class="hero-texto">
+        <h1>Tu ropa es tu <span class="highlight">Identidad Digital</span></h1>
+        <p>Más que un estampado. Una camiseta con un perfil único, fotos, videos y redes sociales integradas.</p>
+        <a href="#tienda" class="btn">Conseguir mi QR</a>
+    </div>
+</section>
 
-    <section id="shop">
-        <h2 class="title">Featured Collection</h2>
-        <div class="products">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80" alt="Identity Tee">
-                <div class="info">
-                    <h3>Identity Tee</h3>
-                    <div class="price">$39</div>
-                    <a href="#" class="buy">Buy Now</a>
-                </div>
+<section id="proceso" class="steps">
+    <div class="step-card">
+        <span class="step-num">01</span>
+        <h3>Compra</h3>
+        <p>Elige tu prenda premium con código QR único e irrepetible.</p>
+    </div>
+    <div class="step-card">
+        <span class="step-num">02</span>
+        <h3>Crea</h3>
+        <p>Escanea y sube 5 fotos, 2 videos y tus redes sociales a tu perfil.</p>
+    </div>
+    <div class="step-card">
+        <span class="step-num">03</span>
+        <h3>Conecta</h3>
+        <p>Deja que el mundo te escanee y reciba tu impacto digital.</p>
+    </div>
+    <div class="step-card">
+        <span class="step-num">04</span>
+        <h3>Gana</h3>
+        <p>Llega a los 10,000 escaneos y obtén una camiseta gratis.</p>
+    </div>
+</section>
+
+<section class="profile-preview">
+    <div class="phone-mockup">
+        <div class="phone-header"></div>
+        <div class="phone-content">
+            <h2 style="font-size: 18px;">@Usuario_Hryet</h2>
+            <p style="font-size: 12px; color: #888;">"Viviendo en el futuro"</p>
+            <div class="phone-stats">
+                <div><b>12k</b><br>Vistas</div>
+                <div><b>5.4k</b><br>Likes</div>
+                <div><b>800</b><br>Shares</div>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80" alt="Premium Hoodie">
-                <div class="info">
-                    <h3>Premium Hoodie</h3>
-                    <div class="price">$79</div>
-                    <a href="#" class="buy">Buy Now</a>
-                </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 15px;">
+                <div style="height: 60px; background: #222;"></div>
+                <div style="height: 60px; background: #222;"></div>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80" alt="Luxury Jacket">
-                <div class="info">
-                    <h3>Luxury Jacket</h3>
-                    <div class="price">$129</div>
-                    <a href="#" class="buy">Buy Now</a>
-                </div>
-            </div>
+            <button class="like-btn">❤️ Dejar un Like</button>
         </div>
-    </section>
+    </div>
+    <div style="flex: 1; max-width: 500px;">
+        <h2 style="font-size: 40px; margin-bottom: 20px;">Tu perfil, <br>tus reglas.</h2>
+        <p style="color: #888; font-size: 18px;">Personaliza lo que la gente ve cuando escanea tu pecho. Cambia tus fotos y videos en cualquier momento desde tu cuenta.</p>
+    </div>
+</section>
 
-    <section id="about">
-        <h2 class="title">Our Philosophy</h2>
-        <div class="about-text">
-            <p>HRYET is more than a brand; it’s a bridge between the physical and digital worlds. Each piece in our collection features a unique, encrypted QR identifier. Your clothing becomes your business card, your portfolio, and your story. We combine high-end tailoring with the future of connectivity.</p>
-        </div>
-    </section>
+<section class="challenge">
+    <h2>El Reto 10,000</h2>
+    <p>Hazte viral en el mundo real. Si tu camiseta llega a 10k escaneos únicos...</p>
+    <div style="background: #000; color: #fff; display: inline-block; padding: 20px 40px; font-weight: 900; font-size: 24px;">
+        🎁 CAMISETA GRATIS + 50% OFF
+    </div>
+</section>
 
-    <section id="contact">
-        <h2 class="title">Join The Registry</h2>
-        <div class="contact-container">
-            <p style="margin-bottom: 30px; color: #888;">Sign up for exclusive drops and tech updates.</p>
-            <form>
-                <input type="email" placeholder="YOUR EMAIL ADDRESS">
-                <button type="submit" class="btn" style="cursor: pointer;">Subscribe</button>
-            </form>
+<section id="tienda">
+    <h2 style="text-align: center; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 4px;">Selecciona tu base</h2>
+    <div class="productos">
+        <div class="producto">
+            <img src="IMG_5617.jpeg">
+            <h3>QR Classic White</h3>
+            <p>$35.00</p>
+            <a href="#" class="btn">Personalizar</a>
         </div>
-    </section>
+        <div class="producto">
+            <img src="IMG_5618.jpeg">
+            <h3>QR Black Edition</h3>
+            <p>$35.00</p>
+            <a href="#" class="btn">Personalizar</a>
+        </div>
+        <div class="producto">
+            <img src="IMG_5631.jpeg">
+            <h3>QR Hoodie Tech</h3>
+            <p>$55.00</p>
+            <a href="#" class="btn">Personalizar</a>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <div class="socials">
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-            <a href="#">TikTok</a>
-        </div>
-        <p>&copy; 2024 HRYET STUDIO. ALL RIGHTS RESERVED.</p>
-    </footer>
+<footer>
+    <p>© 2026 HRYET STUDIO | Wear the future.</p>
+</footer>
 
 </body>
 </html>
