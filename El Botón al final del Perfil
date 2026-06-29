@@ -1,0 +1,11 @@
+<!-- SECCIÓN FINAL DEL PERFIL: CTA A LA TIENDA -->
+<section class="profile-cta">
+    <div class="cta-container">
+        <h2>¿LISTO PARA LLEVAR TU IDENTIDAD?</h2>
+        <p>Crea tu perfil digital y conéctate con el mundo como lo hace Henrry.</p>
+        <div class="cta-buttons">
+            <a href="índice.html" class="btn-primary">VER COLECCIÓN</a>
+            <a href="índice.html#personaliza" class="btn-outline">PERSONALIZAR LA MÍA</a>
+        </div>
+    </div>
+</section>
