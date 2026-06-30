@@ -9,31 +9,15 @@
 
 <title>Registro | HRYET</title>
 
-<link rel="stylesheet" href="../css/registrar.css">
+<link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
 
-<header>
+<div class="container">
 
-<div class="logo">
-HRYET
-</div>
-
-<nav>
-
-<a href="../index.html">Inicio</a>
-
-<a href="login.html">Iniciar sesión</a>
-
-</nav>
-
-</header>
-
-<div class="login-container">
-
-<h1>Crear Cuenta</h1>
+<h1>Crear cuenta</h1>
 
 <form id="registerForm">
 
@@ -41,33 +25,29 @@ HRYET
 type="text"
 id="nombre"
 placeholder="Nombre completo"
-required
->
+required>
+
+<input
+type="text"
+id="username"
+placeholder="Nombre de usuario"
+required>
 
 <input
 type="email"
-id="email"
+id="correo"
 placeholder="Correo electrónico"
-required
->
+required>
 
 <input
 type="password"
 id="password"
 placeholder="Contraseña"
-required
->
-
-<input
-type="password"
-id="confirmar"
-placeholder="Confirmar contraseña"
-required
->
+required>
 
 <button type="submit">
 
-Crear Cuenta
+Crear cuenta
 
 </button>
 
@@ -79,7 +59,7 @@ Crear Cuenta
 
 <a href="login.html">
 
-Inicia sesión
+Iniciar sesión
 
 </a>
 
@@ -87,11 +67,7 @@ Inicia sesión
 
 </div>
 
-<script type="module" src="../js/firebase.js"></script>
-
 <script type="module" src="../js/auth.js"></script>
-
-<script type="module" src="../js/main.js"></script>
 
 </body>
 
