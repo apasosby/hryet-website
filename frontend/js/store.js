@@ -1,53 +1,73 @@
-// ======================================
-// HRYET STORE.JS
-// ======================================
+JS
+import { db } from "./firebase.js";
 
-console.log("🛍️ Tienda HRYET cargada");
+import {
+collection,
+getDocs
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-const productos = [
+// ==============================
+// CARGAR PRODUCTOS
+// ==============================
 
-    {
-        id:1,
-        nombre:"HRYET BLACK",
-        precio:49.99
-    },
+async function cargarProductos(){
 
-    {
-        id:2,
-        nombre:"HRYET WHITE",
-        precio:59.99
-    },
+const contenedor=document.getElementById("productos");
 
-    {
-        id:3,
-        nombre:"HRYET PURPLE",
-        precio:69.99
-    }
+if(!contenedor) return;
 
-];
+contenedor.innerHTML="";
 
-function mostrarProductos(){
+const consulta=await getDocs(collection(db,"productos"));
 
-    console.log(productos);
+consulta.forEach((doc)=>{
+
+const producto=doc.data();
+
+contenedor.innerHTML += `
+
+<div class="card">
+
+<img src="${producto.imagen}" alt="${producto.nombre}">
+
+<h2>${producto.nombre}</h2>
+
+<p>${producto.descripcion}</p>
+
+<h3>$${producto.precio}</h3>
+
+<button onclick="comprar('${doc.id}')">
+
+Comprar
+
+</button>
+
+</div>
+
+`;
+
+});
 
 }
 
-function agregarCarrito(id){
+// ==============================
+// COMPRAR
+// ==============================
 
-    console.log("Producto agregado:",id);
+window.comprar=function(id){
 
-}
+alert("Producto seleccionado: "+id);
 
-function eliminarCarrito(id){
-
-    console.log("Producto eliminado:",id);
-
-}
-
-function comprar(){
-
-    console.log("Compra realizada");
+// Aquí agregaremos el carrito y Stripe.
 
 }
 
-mostrarProductos();
+// ==============================
+// INICIAR
+// ==============================
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+cargarProductos();
+
+});
