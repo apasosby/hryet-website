@@ -4,12 +4,12 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dashboard | HRYET</title>
+<title>Panel | HRYET</title>
 
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/panel.css">
 
 </head>
 
@@ -17,19 +17,97 @@
 
 <header>
 
-<h1>Panel de Control</h1>
+<div class="logo">
+
+HRYET
+
+</div>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+
+<a href="profile.html">Perfil</a>
+
+<a href="store.html">Tienda</a>
+
+<a href="login.html">Cerrar sesión</a>
+
+</nav>
 
 </header>
 
-<main>
+<section class="dashboard">
+
+<div class="sidebar">
+
+<h2>Panel</h2>
+
+<a href="#">Mi Perfil</a>
+
+<a href="#">Mis Camisetas</a>
+
+<a href="#">Escaneos QR</a>
+
+<a href="#">Likes</a>
+
+<a href="#">Configuración</a>
+
+</div>
+
+<div class="content">
+
+<div class="card">
 
 <h2>Bienvenido a HRYET</h2>
 
-<p>Desde aquí administrarás tu perfil, pedidos, QR y estadísticas.</p>
+<p>
 
-</main>
+Administra toda tu identidad digital desde este panel.
 
-<script src="../js/main.js"></script>
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>QR Escaneados</h3>
+
+<h1>0</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Likes</h3>
+
+<h1>0</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Camisetas Registradas</h3>
+
+<h1>0</h1>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 HRYET
+
+</p>
+
+</footer>
+
+<script type="module" src="js/dashboard.js"></script>
 
 </body>
 
