@@ -17,3 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+function iniciarDashboard(){
+
+    console.log("Dashboard iniciado");
+
+}
