@@ -1,112 +1,97 @@
-// ======================================
-// HRYET ADMIN.JS
-// ======================================
+import { db } from "./firebase.js";
 
-console.log("👑 Panel de Administración HRYET iniciado");
+import {
+collection,
+getDocs,
+addDoc,
+deleteDoc,
+doc
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-// ==============================
-// ESTADÍSTICAS
-// ==============================
+// ===================================
+// HRYET ADMIN PANEL
+// ===================================
 
-const estadisticas = {
+// Cargar productos
+async function cargarProductos(){
 
-    usuarios: 0,
-    productos: 0,
-    pedidos: 0,
-    escaneosQR: 0
+const contenedor=document.getElementById("listaProductos");
+
+if(!contenedor) return;
+
+contenedor.innerHTML="";
+
+const consulta=await getDocs(collection(db,"productos"));
+
+consulta.forEach((producto)=>{
+
+const datos=producto.data();
+
+contenedor.innerHTML += `
+
+<div class="producto">
+
+<h3>${datos.nombre}</h3>
+
+<p>${datos.descripcion}</p>
+
+<h4>$${datos.precio}</h4>
+
+<button onclick="eliminarProducto('${producto.id}')">
+
+Eliminar
+
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+// Agregar producto
+window.agregarProducto=async()=>{
+
+const nombre=document.getElementById("nombreProducto").value;
+
+const descripcion=document.getElementById("descripcionProducto").value;
+
+const precio=document.getElementById("precioProducto").value;
+
+await addDoc(collection(db,"productos"),{
+
+nombre,
+
+descripcion,
+
+precio,
+
+imagen:""
+
+});
+
+alert("Producto agregado");
+
+location.reload();
 
 };
 
-// ==============================
-// CARGAR PANEL
-// ==============================
+// Eliminar producto
+window.eliminarProducto=async(id)=>{
 
-function cargarPanel(){
+await deleteDoc(doc(db,"productos",id));
 
-    console.log("Cargando panel...");
+alert("Producto eliminado");
 
-    actualizarPanel();
+location.reload();
 
-}
+};
 
-// ==============================
-// ACTUALIZAR PANEL
-// ==============================
-
-function actualizarPanel(){
-
-    console.table(estadisticas);
-
-}
-
-// ==============================
-// USUARIOS
-// ==============================
-
-function obtenerUsuarios(){
-
-    console.log("Obteniendo usuarios...");
-
-}
-
-// ==============================
-// PRODUCTOS
-// ==============================
-
-function obtenerProductos(){
-
-    console.log("Obteniendo productos...");
-
-}
-
-// ==============================
-// PEDIDOS
-// ==============================
-
-function obtenerPedidos(){
-
-    console.log("Obteniendo pedidos...");
-
-}
-
-// ==============================
-// AGREGAR PRODUCTO
-// ==============================
-
-function agregarProducto(){
-
-    console.log("Nuevo producto");
-
-}
-
-// ==============================
-// ELIMINAR PRODUCTO
-// ==============================
-
-function eliminarProducto(id){
-
-    console.log("Eliminar producto:", id);
-
-}
-
-// ==============================
-// CERRAR SESIÓN
-// ==============================
-
-function cerrarSesion(){
-
-    console.log("Sesión cerrada");
-
-    window.location.href = "login.html";
-
-}
-
-// ==============================
-// INICIAR
-// ==============================
-
+// Iniciar
 document.addEventListener("DOMContentLoaded",()=>{
 
-    cargarPanel();
+cargarProductos();
 
 });
