@@ -1,54 +1,44 @@
-// ======================================
-// HRYET DASHBOARD.JS
-// ======================================
+import { auth, db } from "./firebase.js";
 
-console.log("📊 Panel HRYET cargado");
+import {
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
-const estadisticas = {
+import {
+doc,
+getDoc
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-    qrEscaneados: 0,
-    likes: 0,
-    camisetas: 0,
-    visitas: 0
+onAuthStateChanged(auth, async(user)=>{
 
-};
+if(!user){
 
-// ==============================
-// MOSTRAR ESTADÍSTICAS
-// ==============================
+window.location.href="login.html";
 
-function cargarDashboard(){
-
-    console.log("Cargando estadísticas...");
-
-    actualizarDashboard();
+return;
 
 }
 
-// ==============================
-// ACTUALIZAR PANEL
-// ==============================
+const userRef = doc(db,"users",user.uid);
 
-function actualizarDashboard(){
+const userSnap = await getDoc(userRef);
 
-    const qr = document.getElementById("qrTotal");
-    const likes = document.getElementById("likesTotal");
-    const camisetas = document.getElementById("shirtsTotal");
-    const visitas = document.getElementById("visitsTotal");
+if(userSnap.exists()){
 
-    if(qr) qr.innerHTML = estadisticas.qrEscaneados;
-    if(likes) likes.innerHTML = estadisticas.likes;
-    if(camisetas) camisetas.innerHTML = estadisticas.camisetas;
-    if(visitas) visitas.innerHTML = estadisticas.visitas;
+const data = userSnap.data();
+
+document.getElementById("likesTotal").textContent =
+data.likes || 0;
+
+document.getElementById("qrTotal").textContent =
+data.escaneos || 0;
+
+document.getElementById("visitsTotal").textContent =
+data.seguidores || 0;
+
+document.getElementById("shirtsTotal").textContent =
+data.camisetas || 0;
 
 }
-
-// ==============================
-// INICIAR
-// ==============================
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-    cargarDashboard();
 
 });
