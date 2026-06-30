@@ -1,17 +1,13 @@
+const ProductService = require("../services/productService");
+
 exports.getProducts = (req, res) => {
 
-    res.json({
-        success: true,
-        products: []
-    });
+    res.json(ProductService.getAllProducts());
 
 };
 
 exports.createProduct = (req, res) => {
 
-    res.json({
-        success: true,
-        message: "Producto creado"
-    });
+    res.json(ProductService.createProduct(req.body));
 
 };
