@@ -1,16 +1,29 @@
 class ProductService {
 
+    constructor() {
+
+        this.products = [];
+
+    }
+
     getAllProducts() {
 
-        return [];
+        return this.products;
 
     }
 
     createProduct(product) {
 
+        this.products.push(product);
+
         return {
+
             success: true,
+
+            message: "Producto agregado",
+
             data: product
+
         };
 
     }
