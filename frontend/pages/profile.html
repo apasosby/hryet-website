@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mi Perfil | HRYET</title>
+<title>Perfil | HRYET</title>
 
 <link rel="stylesheet" href="../css/perfil.css">
 
@@ -27,49 +27,42 @@ HRYET
 
 <a href="../index.html">Inicio</a>
 
-<a href="store.html">Tienda</a>
-
 <a href="dashboard.html">Dashboard</a>
+
+<a href="store.html">Tienda</a>
 
 </nav>
 
 </header>
 
-<section class="profile">
+<main class="profile">
 
 <div class="profile-card">
 
-<img id="fotoPerfil"
-src="../assets/images/default-avatar.png"
-alt="Perfil">
+<img
+id="fotoPerfil"
+src="https://via.placeholder.com/180"
+alt="Foto de Perfil">
 
 <h1 id="userName">
 
-Usuario HRYET
+Usuario
 
 </h1>
 
 <p id="bio">
 
-Tu identidad digital.
+Tu identidad digital comienza aquí.
 
 </p>
 
-<div class="contador">
-
-<div>
-
-<h2 id="scanCount">0</h2>
-
-<p>Escaneos</p>
-
-</div>
+<div class="stats">
 
 <div>
 
 <h2 id="likesCount">0</h2>
 
-<p>Likes</p>
+<p>❤️ Likes</p>
 
 </div>
 
@@ -77,23 +70,25 @@ Tu identidad digital.
 
 <h2 id="followersCount">0</h2>
 
-<p>Seguidores</p>
+<p>👥 Seguidores</p>
+
+</div>
+
+<div>
+
+<h2 id="scanCount">0</h2>
+
+<p>📷 Escaneos</p>
 
 </div>
 
 </div>
 
-<div class="redes">
+<div class="social">
 
 <a id="instagram" href="#" target="_blank">
 
 Instagram
-
-</a>
-
-<a id="tiktok" href="#" target="_blank">
-
-TikTok
 
 </a>
 
@@ -103,61 +98,77 @@ Facebook
 
 </a>
 
+<a id="tiktok" href="#" target="_blank">
+
+TikTok
+
+</a>
+
 </div>
 
-<div class="musica">
+<h2>
 
-<h2>🎵 Mi Música</h2>
+🎵 Música
+
+</h2>
 
 <iframe
+
+id="spotify"
+
 style="border-radius:12px"
+
 src=""
+
 width="100%"
+
 height="152"
+
 frameborder="0"
-allowfullscreen=""
+
+allowfullscreen
+
 loading="lazy">
+
 </iframe>
 
-</div>
+<h2>
 
-<div class="portafolio">
+📷 Mi QR
 
-<h2>📂 Mi Portafolio</h2>
+</h2>
 
-<p>
+<input
 
-Aquí podrás mostrar tus trabajos, fotografías, videos y proyectos.
+type="text"
 
-</p>
+id="qrLink"
 
-</div>
+readonly>
 
-<div class="camiseta">
+<button onclick="copiarQR()">
 
-<h2>👕 Mi Camiseta HRYET</h2>
+Copiar enlace
 
-<p>
+</button>
 
-QR único conectado a este perfil.
-
-</p>
-
-</div>
+<br><br>
 
 <button id="likeButton">
 
-❤️ Me gusta
+❤️ Dar Like
 
 </button>
 
 </div>
 
-</section>
-
-<script type="module" src="../js/firebase.js"></script>
+</main>
 
 <script type="module" src="../js/profile.js"></script>
+
+<script type="module" src="../js/qr.js"></script>
+
+<script type="module" src="../js/auth.js"></script>
 
 </body>
 
