@@ -1,57 +1,79 @@
-// ======================================
-// HRYET QR.JS
-// ======================================
+import { auth, db } from "./firebase.js";
 
-console.log("📱 Sistema QR iniciado");
+import {
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+import {
+doc,
+getDoc,
+updateDoc
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 // ==============================
-// GENERAR QR
+// CARGAR QR DEL USUARIO
 // ==============================
 
-function generarQR(usuarioId){
+onAuthStateChanged(auth, async(user)=>{
 
-    console.log("Generando QR para:", usuarioId);
+if(!user) return;
+
+const ref = doc(db,"users",user.uid);
+
+const snap = await getDoc(ref);
+
+if(!snap.exists()) return;
+
+const data = snap.data();
+
+const link =
+
+"https://hryet.com/profile/" + user.uid;
+
+const qrLink = document.getElementById("qrLink");
+
+if(qrLink){
+
+qrLink.value = link;
 
 }
 
+});
+
 // ==============================
-// ESCANEAR QR
+// COPIAR ENLACE
 // ==============================
 
-function escanearQR(codigo){
+window.copiarQR=function(){
 
-    console.log("QR escaneado:", codigo);
+const qr=document.getElementById("qrLink");
 
-    registrarEscaneo(codigo);
+qr.select();
 
-}
+document.execCommand("copy");
+
+alert("Enlace copiado.");
+
+};
 
 // ==============================
 // REGISTRAR ESCANEO
 // ==============================
 
-function registrarEscaneo(codigo){
+export async function registrarEscaneo(uid){
 
-    console.log("Escaneo registrado");
+const ref=doc(db,"users",uid);
 
-}
+const snap=await getDoc(ref);
 
-// ==============================
-// OBTENER LINK DEL PERFIL
-// ==============================
+if(!snap.exists()) return;
 
-function obtenerPerfil(usuario){
+const datos=snap.data();
 
-    return "https://hryet.com/profile.html?id=" + usuario;
+await updateDoc(ref,{
 
-}
-
-// ==============================
-// INICIAR
-// ==============================
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-    console.log("QR listo");
+escaneos:(datos.escaneos||0)+1
 
 });
+
+}
