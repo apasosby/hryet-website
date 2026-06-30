@@ -1,135 +1,167 @@
 import { auth, db } from "./firebase.js";
 
 import {
-
-createUserWithEmailAndPassword,
-
-signInWithEmailAndPassword
-
-} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 import {
+  doc,
+  setDoc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-doc,
 
-setDoc
-
-} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
-
-// ===============================
+// =======================
 // REGISTRO
-// ===============================
+// =======================
 
 const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
 
-registerForm.addEventListener("submit", async (e) => {
+    registerForm.addEventListener("submit", async (e) => {
 
-e.preventDefault();
+        e.preventDefault();
 
-const nombre = document.getElementById("nombre").value;
+        const nombre = document.getElementById("nombre").value;
+        const username = document.getElementById("username").value;
+        const correo = document.getElementById("correo").value;
+        const password = document.getElementById("password").value;
 
-const email = document.getElementById("email").value;
+        try {
 
-const password = document.getElementById("password").value;
+            const userCredential =
+                await createUserWithEmailAndPassword(
+                    auth,
+                    correo,
+                    password
+                );
 
-try {
+            const user = userCredential.user;
 
-const userCredential = await createUserWithEmailAndPassword(
+            await setDoc(doc(db, "users", user.uid), {
 
-auth,
+                uid: user.uid,
 
-email,
+                nombre,
 
-password
+                username,
 
-);
+                correo,
 
-const user = userCredential.user;
+                foto: "",
 
-await setDoc(doc(db, "users", user.uid), {
+                likes: 0,
 
-nombre,
+                seguidores: 0,
 
-email,
+                siguiendo: 0,
 
-uid: user.uid,
+                verificado: false,
 
-likes: 0,
+                creado: new Date()
 
-escaneos: 0,
+            });
 
-seguidores: 0,
+            alert("Cuenta creada correctamente");
 
-instagram: "",
+            window.location.href = "login.html";
 
-facebook: "",
+        } catch (error) {
 
-tiktok: "",
+            alert(error.message);
 
-spotify: "",
+        }
 
-bio: "",
-
-camisetaQR: ""
-
-});
-
-alert("Cuenta creada correctamente.");
-
-window.location.href = "login.html";
-
-}
-
-catch(error){
-
-alert(error.message);
+    });
 
 }
 
-});
 
-}
 
-// ===============================
+// =======================
 // LOGIN
-// ===============================
+// =======================
 
 const loginForm = document.getElementById("loginForm");
 
-if(loginForm){
+if (loginForm) {
 
-loginForm.addEventListener("submit", async(e)=>{
+    loginForm.addEventListener("submit", async (e) => {
 
-e.preventDefault();
+        e.preventDefault();
 
-const email=document.getElementById("email").value;
+        const correo = document.getElementById("correo").value;
 
-const password=document.getElementById("password").value;
+        const password = document.getElementById("password").value;
 
-try{
+        try {
 
-await signInWithEmailAndPassword(
+            await signInWithEmailAndPassword(
+                auth,
+                correo,
+                password
+            );
 
-auth,
+            window.location.href = "dashboard.html";
 
-email,
+        } catch (error) {
 
-password
+            alert(error.message);
 
-);
+        }
 
-window.location.href="dashboard.html";
+    });
+
+}
+
+
+
+// =======================
+// CERRAR SESIÓN
+// =======================
+
+const logout = document.getElementById("logout");
+
+if (logout) {
+
+    logout.addEventListener("click", async () => {
+
+        await signOut(auth);
+
+        window.location.href = "login.html";
+
+    });
 
 }
 
-catch(error){
 
-alert(error.message);
 
-}
+// =======================
+// USUARIO ACTUAL
+// =======================
+
+onAuthStateChanged(auth, async (user) => {
+
+    if (!user) return;
+
+    const ref = doc(db, "users", user.uid);
+
+    const snap = await getDoc(ref);
+
+    if (!snap.exists()) return;
+
+    const data = snap.data();
+
+    const nombre = document.getElementById("userName");
+
+    if (nombre) {
+
+        nombre.innerHTML = data.nombre;
+
+    }
 
 });
-
-}
