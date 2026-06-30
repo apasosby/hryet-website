@@ -1,0 +1,34 @@
+.store{
+    padding:60px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.product{
+    background:#111;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+}
+
+.product img{
+    width:100%;
+    border-radius:10px;
+}
+
+.product h3{
+    margin:15px 0;
+}
+
+.product p{
+    color:#aaa;
+}
+
+.product button{
+    margin-top:20px;
+    width:100%;
+}
