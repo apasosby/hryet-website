@@ -1,0 +1,33 @@
+body{
+    background:#050505;
+    color:#fff;
+}
+
+.register-container{
+    width:450px;
+    max-width:90%;
+    margin:70px auto;
+    background:#111;
+    padding:40px;
+    border-radius:15px;
+}
+
+.register-container h1{
+    text-align:center;
+    color:#8A2BE2;
+    margin-bottom:25px;
+}
+
+.register-container input{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    background:#222;
+    color:white;
+}
+
+.register-container button{
+    width:100%;
+}
