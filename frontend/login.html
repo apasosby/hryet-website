@@ -2,51 +2,92 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iniciar sesión | HRYET</title>
 
-<link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar sesión | HRYET</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 
 </head>
 
 <body>
 
-<div class="login-container">
+<header>
 
-<h1>Bienvenido</h1>
+    <div class="logo">
+        HRYET
+    </div>
 
-<p>Inicia sesión en HRYET</p>
+    <nav>
 
-<form>
+        <a href="index.html">Inicio</a>
+        <a href="store.html">Tienda</a>
+        <a href="profile.html">Perfil</a>
+        <a href="register.html">Registrarse</a>
 
-<input type="email" placeholder="Correo electrónico">
+    </nav>
 
-<input type="password" placeholder="Contraseña">
+</header>
 
-<button type="submit">
+<section class="login-container">
 
-Entrar
+    <h1>Bienvenido</h1>
 
-</button>
+    <p class="subtitle">
+        Inicia sesión para acceder a tu perfil HRYET.
+    </p>
 
-</form>
+    <form id="loginForm">
 
-<p>
+        <input
+            type="email"
+            id="email"
+            placeholder="Correo electrónico"
+            required
+        >
 
-¿No tienes cuenta?
+        <input
+            type="password"
+            id="password"
+            placeholder="Contraseña"
+            required
+        >
 
-<a href="register.html">
+        <button type="submit">
+            Iniciar sesión
+        </button>
 
-Crear cuenta
+    </form>
 
-</a>
+    <div class="links">
 
-</p>
+        <a href="register.html">
+            Crear una cuenta
+        </a>
 
-</div>
+        <br><br>
 
-<script src="../js/main.js"></script>
+        <a href="#">
+            ¿Olvidaste tu contraseña?
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 HRYET
+    </p>
+
+</footer>
+
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/auth.js"></script>
 
 </body>
 
