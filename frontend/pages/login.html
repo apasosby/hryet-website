@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Iniciar Sesión | HRYET</title>
+
+<link rel="stylesheet" href="../css/login.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+HRYET
+</div>
+
+<nav>
+
+<a href="../index.html">Inicio</a>
+
+<a href="register.html">Registrarse</a>
+
+</nav>
+
+</header>
+
+<div class="login-container">
+
+<h1>Iniciar Sesión</h1>
+
+<form id="loginForm">
+
+<input
+type="email"
+id="email"
+placeholder="Correo electrónico"
+required
+>
+
+<input
+type="password"
+id="password"
+placeholder="Contraseña"
+required
+>
+
+<button type="submit">
+Entrar
+</button>
+
+</form>
+
+<p>
+
+¿No tienes cuenta?
+
+<a href="register.html">
+
+Regístrate aquí
+
+</a>
+
+</p>
+
+</div>
+
+<script type="module" src="../js/firebase.js"></script>
+
+<script type="module" src="../js/auth.js"></script>
+
+<script type="module" src="../js/main.js"></script>
+
+</body>
+
+</html>
