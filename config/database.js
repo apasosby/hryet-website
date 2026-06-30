@@ -1,7 +1,7 @@
 const DATABASE = {
-    host: "localhost",
-    port: 27017,
-    name: "hryet"
+    HOST: "localhost",
+    PORT: 27017,
+    NAME: "hryet"
 };
 
 export default DATABASE;
