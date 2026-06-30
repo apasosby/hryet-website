@@ -2,51 +2,111 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registro | HRYET</title>
 
-<link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crear cuenta | HRYET</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/registrar.css">
 
 </head>
 
 <body>
 
-<div class="login-container">
+<header>
 
-<h1>Crear cuenta</h1>
+    <div class="logo">
+        HRYET
+    </div>
 
-<form>
+    <nav>
 
-<input type="text" placeholder="Nombre completo">
+        <a href="index.html">Inicio</a>
+        <a href="store.html">Tienda</a>
+        <a href="profile.html">Perfil</a>
+        <a href="login.html">Iniciar sesión</a>
 
-<input type="email" placeholder="Correo electrónico">
+    </nav>
 
-<input type="password" placeholder="Contraseña">
+</header>
 
-<button type="submit">
+<section class="register-container">
 
-Crear cuenta
+    <h1>Crear una cuenta</h1>
 
-</button>
+    <p class="subtitle">
+        Únete a HRYET y crea tu identidad digital.
+    </p>
 
-</form>
+    <form id="registerForm">
 
-<p>
+        <input
+            type="text"
+            id="fullname"
+            placeholder="Nombre completo"
+            required
+        >
 
-¿Ya tienes cuenta?
+        <input
+            type="text"
+            id="username"
+            placeholder="Nombre de usuario"
+            required
+        >
 
-<a href="login.html">
+        <input
+            type="email"
+            id="email"
+            placeholder="Correo electrónico"
+            required
+        >
 
-Inicia sesión
+        <input
+            type="password"
+            id="password"
+            placeholder="Contraseña"
+            required
+        >
 
-</a>
+        <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirmar contraseña"
+            required
+        >
 
-</p>
+        <button type="submit">
+            Crear cuenta
+        </button>
 
-</div>
+    </form>
 
-<script src="../js/main.js"></script>
+    <div class="links">
+
+        <p>
+            ¿Ya tienes una cuenta?
+        </p>
+
+        <a href="login.html">
+            Iniciar sesión
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 HRYET. Todos los derechos reservados.
+    </p>
+
+</footer>
+
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/auth.js"></script>
 
 </body>
 
