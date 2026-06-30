@@ -1,121 +1,82 @@
-// ======================================
-// HRYET API.JS
-// ======================================
+// ==========================================
+// HRYET API
+// ==========================================
 
-const API = {
+import { db } from "./firebase.js";
 
-    version: "1.0",
+import {
 
-    url: "https://api.hryet.com"
+collection,
+doc,
+getDoc,
+getDocs,
+setDoc,
+updateDoc,
+deleteDoc,
+addDoc
 
-};
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-// ==============================
-// OBTENER DATOS
-// ==============================
+// ===============================
+// USUARIOS
+// ===============================
 
-async function obtenerDatos(ruta) {
+export async function obtenerUsuario(uid){
 
-    try {
+const referencia = doc(db,"users",uid);
 
-        const respuesta = await fetch(API.url + ruta);
-
-        return await respuesta.json();
-
-    } catch (error) {
-
-        console.error("Error:", error);
-
-    }
-
-}
-
-// ==============================
-// ENVIAR DATOS
-// ==============================
-
-async function enviarDatos(ruta, datos) {
-
-    try {
-
-        const respuesta = await fetch(API.url + ruta, {
-
-            method: "POST",
-
-            headers: {
-
-                "Content-Type": "application/json"
-
-            },
-
-            body: JSON.stringify(datos)
-
-        });
-
-        return await respuesta.json();
-
-    } catch (error) {
-
-        console.error(error);
-
-    }
+return await getDoc(referencia);
 
 }
 
-// ==============================
-// ACTUALIZAR DATOS
-// ==============================
+export async function actualizarUsuario(uid,datos){
 
-async function actualizarDatos(ruta, datos) {
+const referencia = doc(db,"users",uid);
 
-    try {
-
-        const respuesta = await fetch(API.url + ruta, {
-
-            method: "PUT",
-
-            headers: {
-
-                "Content-Type": "application/json"
-
-            },
-
-            body: JSON.stringify(datos)
-
-        });
-
-        return await respuesta.json();
-
-    } catch (error) {
-
-        console.error(error);
-
-    }
+return await updateDoc(referencia,datos);
 
 }
 
-// ==============================
-// ELIMINAR DATOS
-// ==============================
+// ===============================
+// PRODUCTOS
+// ===============================
 
-async function eliminarDatos(ruta) {
+export async function obtenerProductos(){
 
-    try {
-
-        const respuesta = await fetch(API.url + ruta, {
-
-            method: "DELETE"
-
-        });
-
-        return await respuesta.json();
-
-    } catch (error) {
-
-        console.error(error);
-
-    }
+return await getDocs(collection(db,"productos"));
 
 }
 
-console.log("🌐 API HRYET cargada");
+export async function crearProducto(datos){
+
+return await addDoc(collection(db,"productos"),datos);
+
+}
+
+export async function eliminarProducto(id){
+
+return await deleteDoc(doc(db,"productos",id));
+
+}
+
+// ===============================
+// PEDIDOS
+// ===============================
+
+export async function crearPedido(datos){
+
+return await addDoc(collection(db,"pedidos"),datos);
+
+}
+
+// ===============================
+// PERFIL
+// ===============================
+
+export async function guardarPerfil(uid,datos){
+
+return await setDoc(doc(db,"users",uid),datos);
+
+}
+
+console.log("🌐 API HRYET lista");
