@@ -1,53 +1,56 @@
-// ======================================
-// HRYET PROFILE.JS
-// ======================================
-
-import { auth } from "./firebase.js";
+import { auth, db } from "./firebase.js";
 
 import {
-    onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
-// ===============================
-// CARGAR PERFIL
-// ===============================
+import {
+doc,
+getDoc
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async(user)=>{
 
-    if (user) {
+if(!user){
 
-        console.log("Perfil cargado");
+window.location.href="login.html";
 
-        const nombre = document.getElementById("userName");
+return;
 
-        if (nombre) {
-            nombre.innerHTML = user.email;
-        }
+}
 
-    } else {
+const docRef = doc(db,"users",user.uid);
 
-        window.location.href = "login.html";
+const docSnap = await getDoc(docRef);
 
-    }
+if(docSnap.exists()){
+
+const data = docSnap.data();
+
+document.getElementById("userName").textContent =
+data.nombre || "Usuario";
+
+document.getElementById("bio").textContent =
+data.bio || "Bienvenido a HRYET";
+
+document.getElementById("likesCount").textContent =
+data.likes || 0;
+
+document.getElementById("scanCount").textContent =
+data.escaneos || 0;
+
+document.getElementById("followersCount").textContent =
+data.seguidores || 0;
+
+document.getElementById("instagram").href =
+data.instagram || "#";
+
+document.getElementById("facebook").href =
+data.facebook || "#";
+
+document.getElementById("tiktok").href =
+data.tiktok || "#";
+
+}
 
 });
-
-// ===============================
-// EDITAR PERFIL
-// ===============================
-
-function editarPerfil() {
-
-    console.log("Editar perfil");
-
-}
-
-// ===============================
-// GUARDAR PERFIL
-// ===============================
-
-function guardarPerfil() {
-
-    console.log("Guardar perfil");
-
-}
