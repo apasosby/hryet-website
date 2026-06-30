@@ -12,17 +12,19 @@ import { getStorage } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-
 
 const firebaseConfig = {
 
-  apiKey: "TU_API_KEY",
+  apiKey: "AIzaSyCoNoiTkueaqHxBwEUig3d9BX0taTjr3jc",
 
-  authDomain: "TU_AUTH_DOMAIN",
+  authDomain: "hryet-f2de3.firebaseapp.com",
 
-  projectId: "TU_PROJECT_ID",
+  projectId: "hryet-f2de3",
 
-  storageBucket: "TU_STORAGE_BUCKET",
+  storageBucket: "hryet-f2de3.firebasestorage.app",
 
-  messagingSenderId: "TU_MESSAGING_SENDER_ID",
+  messagingSenderId: "839699465873",
 
-  appId: "TU_APP_ID"
+  appId: "1:839699465873:web:4cbb72d912c676b537a130",
+
+  measurementId: "G-8DK6LSF1TT"
 
 };
 
@@ -35,6 +37,8 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 
 export {
+
+  app,
 
   auth,
 
