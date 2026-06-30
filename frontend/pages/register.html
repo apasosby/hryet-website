@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Registro | HRYET</title>
+
+<link rel="stylesheet" href="../css/registrar.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+HRYET
+</div>
+
+<nav>
+
+<a href="../index.html">Inicio</a>
+
+<a href="login.html">Iniciar sesión</a>
+
+</nav>
+
+</header>
+
+<div class="login-container">
+
+<h1>Crear Cuenta</h1>
+
+<form id="registerForm">
+
+<input
+type="text"
+id="nombre"
+placeholder="Nombre completo"
+required
+>
+
+<input
+type="email"
+id="email"
+placeholder="Correo electrónico"
+required
+>
+
+<input
+type="password"
+id="password"
+placeholder="Contraseña"
+required
+>
+
+<input
+type="password"
+id="confirmar"
+placeholder="Confirmar contraseña"
+required
+>
+
+<button type="submit">
+
+Crear Cuenta
+
+</button>
+
+</form>
+
+<p>
+
+¿Ya tienes cuenta?
+
+<a href="login.html">
+
+Inicia sesión
+
+</a>
+
+</p>
+
+</div>
+
+<script type="module" src="../js/firebase.js"></script>
+
+<script type="module" src="../js/auth.js"></script>
+
+<script type="module" src="../js/main.js"></script>
+
+</body>
+
+</html>
