@@ -1,42 +1,32 @@
-// ======================================
+// ==========================================
 // HRYET FIREBASE
-// ======================================
+// ==========================================
 
-// Importar Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-import { getStorage } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
-
-// ======================================
-// CONFIGURACIÓN DE FIREBASE
-// (La reemplazaremos por la tuya)
-// ======================================
+import { getStorage } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-storage.js";
 
 const firebaseConfig = {
 
-    apiKey: "TU_API_KEY",
+  apiKey: "TU_API_KEY",
 
-    authDomain: "TU_PROYECTO.firebaseapp.com",
+  authDomain: "TU_AUTH_DOMAIN",
 
-    projectId: "TU_PROYECTO",
+  projectId: "TU_PROJECT_ID",
 
-    storageBucket: "TU_PROYECTO.appspot.com",
+  storageBucket: "TU_STORAGE_BUCKET",
 
-    messagingSenderId: "000000000000",
+  messagingSenderId: "TU_MESSAGING_SENDER_ID",
 
-    appId: "TU_APP_ID"
+  appId: "TU_APP_ID"
 
 };
 
-// Inicializar Firebase
-
 const app = initializeApp(firebaseConfig);
-
-// Servicios
 
 const auth = getAuth(app);
 
@@ -44,14 +34,12 @@ const db = getFirestore(app);
 
 const storage = getStorage(app);
 
-// Exportar
-
 export {
 
-    auth,
+  auth,
 
-    db,
+  db,
 
-    storage
+  storage
 
 };
