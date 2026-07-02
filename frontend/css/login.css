@@ -1,34 +1,193 @@
-body{
-    background:#050505;
-    color:#fff;
+/* ==========================================
+   HRYET LOGIN
+========================================== */
+
+.login{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:140px 20px;
+
+background:
+radial-gradient(circle at top,#8A2BE233 0%,transparent 40%),
+linear-gradient(#050505,#0a0a0a);
+
 }
 
-.login-container{
-    width:420px;
-    max-width:90%;
-    margin:80px auto;
-    background:#111;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 0 25px rgba(138,43,226,.2);
+.login-box{
+
+width:100%;
+
+max-width:520px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:30px;
+
+padding:45px;
+
+box-shadow:var(--shadow);
+
 }
 
-.login-container h1{
-    text-align:center;
-    margin-bottom:25px;
-    color:#8A2BE2;
+.login-logo{
+
+font-size:38px;
+
+font-weight:800;
+
+text-align:center;
+
+margin-bottom:15px;
+
+letter-spacing:3px;
+
 }
 
-.login-container input{
-    width:100%;
-    padding:15px;
-    margin:12px 0;
-    border:none;
-    border-radius:10px;
-    background:#222;
-    color:white;
+.login-title{
+
+text-align:center;
+
+font-size:32px;
+
+margin-bottom:10px;
+
 }
 
-.login-container button{
-    width:100%;
+.login-text{
+
+text-align:center;
+
+color:#9d9d9d;
+
+margin-bottom:35px;
+
+}
+
+.login-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.login-form label{
+
+font-size:15px;
+
+font-weight:600;
+
+}
+
+.login-form input{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+padding:16px;
+
+border-radius:18px;
+
+color:white;
+
+font-size:16px;
+
+outline:none;
+
+transition:.35s;
+
+}
+
+.login-form input:focus{
+
+border-color:var(--primary);
+
+box-shadow:0 0 20px rgba(138,43,226,.35);
+
+}
+
+.login-form button{
+
+background:var(--primary);
+
+color:white;
+
+padding:16px;
+
+border-radius:50px;
+
+font-size:17px;
+
+font-weight:700;
+
+transition:.35s;
+
+}
+
+.login-form button:hover{
+
+background:var(--primary-light);
+
+transform:translateY(-3px);
+
+}
+
+.login-links{
+
+margin-top:25px;
+
+display:flex;
+
+justify-content:space-between;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+}
+
+.login-links a{
+
+color:#bdbdbd;
+
+transition:.35s;
+
+font-size:14px;
+
+}
+
+.login-links a:hover{
+
+color:var(--primary-light);
+
+}
+
+@media(max-width:768px){
+
+.login-box{
+
+padding:30px;
+
+}
+
+.login-title{
+
+font-size:26px;
+
+}
+
 }
