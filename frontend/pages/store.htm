@@ -7,9 +7,27 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tienda | HRYET</title>
+<title>
 
-<link rel="stylesheet" href="../css/tienda.css">
+HRYET | Tienda
+
+</title>
+
+<link rel="stylesheet" href="../css/variables.css">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/navbar.css">
+
+<link rel="stylesheet" href="../css/store.css">
+
+<link rel="stylesheet" href="../css/footer.css">
+
+<link rel="stylesheet" href="../css/animations.css">
+
+<link rel="stylesheet" href="../css/responsive.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
@@ -17,17 +35,27 @@
 
 <header>
 
+<nav class="navbar">
+
 <div class="logo">
+
 HRYET
+
 </div>
 
-<nav>
+<ul>
 
-<a href="../index.html">Inicio</a>
+<li><a href="../index.html">Inicio</a></li>
 
-<a href="profile.html">Mi Perfil</a>
+<li><a href="store.html">Tienda</a></li>
 
-<a href="dashboard.html">Dashboard</a>
+<li><a href="profile.html">Perfil QR</a></li>
+
+<li><a href="login.html">Login</a></li>
+
+<li><a href="register.html">Registro</a></li>
+
+</ul>
 
 </nav>
 
@@ -35,179 +63,730 @@ HRYET
 
 <section class="store">
 
-<h1>Nuestra Colección</h1>
+<div class="store-header">
 
-<p>
-Cada camiseta incluye un código QR único conectado a tu identidad digital.
-</p>
+<h1>
 
-<div class="products">
+Colección HRYET
 
-<div class="card">
-
-<img src="../assets/images/shirt-black.png" alt="HRYET Black">
-
-<h2>HRYET BLACK</h2>
+</h1>
 
 <p>
 
-Camiseta Oversize Premium
+Cada prenda es única y puede convertirse en tu identidad digital mediante un código QR personalizado.
 
 </p>
 
-<h3>$49.99</h3>
+</div>
 
-<ul>
+<div class="search-box">
 
-<li>✔ QR Único</li>
+<input
 
-<li>✔ Perfil Digital</li>
+type="text"
 
-<li>✔ Contador de Escaneos</li>
-
-<li>✔ Likes</li>
-
-<li>✔ Redes Sociales</li>
-
-</ul>
+placeholder="Buscar camisetas...">
 
 <button>
 
-Comprar
+Buscar
 
 </button>
 
 </div>
 
-<div class="card">
+<div class="categories">
 
-<img src="../assets/images/shirt-white.png" alt="HRYET White">
+<button>
 
-<h2>HRYET WHITE</h2>
+Todos
 
-<p>
+</button>
+
+<button>
+
+Oversize
+
+</button>
+
+<button>
+
+Premium
+
+</button>
+
+<button>
 
 Edición Limitada
 
-</p>
-
-<h3>$59.99</h3>
-
-<ul>
-
-<li>✔ Perfil Personalizado</li>
-
-<li>✔ Música</li>
-
-<li>✔ Portafolio</li>
-
-<li>✔ Estadísticas</li>
-
-<li>✔ QR Premium</li>
-
-</ul>
+</button>
 
 <button>
+
+Personalizadas
+
+</button>
+
+</div>
+
+<div class="products">
+<!-- PRODUCTO 1 -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="../assets/images/shirt1.png" alt="HRYET Black">
+
+<div class="badge">
+
+Nuevo
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+HRYET Black QR
+
+</h3>
+
+<p>
+
+Camiseta premium con QR personalizado.
+
+</p>
+
+<div class="price">
+
+$39.99
+
+</div>
+
+<div class="rating">
+
+★★★★★
+
+</div>
+
+<div class="actions">
+
+<button class="buy">
 
 Comprar
 
 </button>
+
+<button class="cart">
+
+🛒
+
+</button>
+
+<button class="favorite">
+
+❤
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PRODUCTO 2 -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="../assets/images/shirt2.png" alt="HRYET White">
+
+<div class="badge">
+
+Popular
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+HRYET White
+
+</h3>
+
+<p>
+
+Diseño minimalista de lujo.
+
+</p>
+
+<div class="price">
+
+$44.99
+
+</div>
+
+<div class="rating">
+
+★★★★★
+
+</div>
+
+<div class="actions">
+
+<button class="buy">
+
+Comprar
+
+</button>
+
+<button class="cart">
+
+🛒
+
+</button>
+
+<button class="favorite">
+
+❤
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PRODUCTO 3 -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="../assets/images/shirt3.png" alt="HRYET Custom">
+
+<div class="badge">
+
+Personalizable
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+HRYET Custom
+
+</h3>
+
+<p>
+
+Sube tu foto y crea un diseño único.
+
+</p>
+
+<div class="price">
+
+$59.99
+
+</div>
+
+<div class="rating">
+
+★★★★★
+
+</div>
+
+<div class="actions">
+
+<button class="buy">
+
+Comprar
+
+</button>
+
+<button class="cart">
+
+🛒
+
+</button>
+
+<button class="favorite">
+
+❤
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PRODUCTO 4 -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="../assets/images/shirt4.png" alt="Luxury">
+
+<div class="badge">
+
+Edición Limitada
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+Luxury Purple
+
+</h3>
+
+<p>
+
+Colección exclusiva HRYET.
+
+</p>
+
+<div class="price">
+
+$69.99
+
+</div>
+
+<div class="rating">
+
+★★★★★
+
+</div>
+
+<div class="actions">
+
+<button class="buy">
+
+Comprar
+
+</button>
+
+<button class="cart">
+
+🛒
+
+</button>
+
+<button class="favorite">
+
+❤
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- COLECCIONES -->
+<!-- ========================= -->
+
+<section class="collections">
+
+<h2>
+
+Explora nuestras colecciones
+
+</h2>
+
+<div class="products">
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="../assets/images/collection1.png" alt="Oversize">
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+Oversize Collection
+
+</h3>
+
+<p>
+
+Diseños urbanos con identidad digital.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="../assets/images/collection2.png" alt="Luxury">
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+Luxury Collection
+
+</h3>
+
+<p>
+
+Moda premium para destacar.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="../assets/images/collection3.png" alt="Custom">
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+Custom Collection
+
+</h3>
+
+<p>
+
+Crea tu propia camiseta desde cero.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- BENEFICIOS -->
+<!-- ========================= -->
+
+<section class="benefits">
+
+<h2>
+
+¿Por qué comprar en HRYET?
+
+</h2>
+
+<div class="features-grid">
+
+<div class="card">
+
+<h3>
+
+👕 Calidad Premium
+
+</h3>
+
+<p>
+
+Algodón de alta calidad con impresión profesional.
+
+</p>
 
 </div>
 
 <div class="card">
 
-<img src="../assets/images/shirt-purple.png" alt="HRYET Purple">
+<h3>
 
-<h2>HRYET PURPLE</h2>
+📱 QR Único
+
+</h3>
 
 <p>
 
-Founder Edition
+Cada camiseta posee un código QR exclusivo.
 
 </p>
 
-<h3>$79.99</h3>
+</div>
 
-<ul>
+<div class="card">
 
-<li>✔ Todo desbloqueado</li>
+<h3>
 
-<li>✔ Insignia Founder</li>
+🚚 Envío Seguro
 
-<li>✔ QR Animado</li>
+</h3>
 
-<li>✔ Prioridad</li>
+<p>
 
-<li>✔ Premium</li>
+Seguimiento de todos los pedidos.
 
-</ul>
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+❤️ Personalización
+
+</h3>
+
+<p>
+
+Diseña tu camiseta completamente a tu gusto.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PROMOCIÓN -->
+<!-- ========================= -->
+
+<section class="cta">
+
+<h2>
+
+Diseña la tuya hoy
+
+</h2>
+
+<p>
+
+Sube tu fotografía, personaliza tu camiseta y crea una identidad única.
+
+</p>
+
+<a href="product.html">
 
 <button>
 
-Comprar
+Comenzar
+
+</button>
+
+</a>
+
+</section>
+<!-- ========================= -->
+<!-- PAGINACIÓN -->
+<!-- ========================= -->
+
+<section class="pagination">
+
+<div class="container">
+
+<button>
+
+← Anterior
+
+</button>
+
+<button class="active">
+
+1
+
+</button>
+
+<button>
+
+2
+
+</button>
+
+<button>
+
+3
+
+</button>
+
+<button>
+
+Siguiente →
 
 </button>
 
 </div>
 
-</div>
-
 </section>
 
-<section>
+<!-- ========================= -->
+<!-- NEWSLETTER -->
+<!-- ========================= -->
 
-<h1>¿Cómo funciona?</h1>
+<section class="newsletter">
 
-<div class="steps">
+<div class="container">
 
-<div>
+<h2>
 
-<h2>1️⃣ Compra</h2>
+No te pierdas ningún lanzamiento
 
-<p>Compra tu camiseta HRYET.</p>
-
-</div>
-
-<div>
-
-<h2>2️⃣ Activa</h2>
-
-<p>Conecta tu QR con tu perfil.</p>
-
-</div>
-
-<div>
-
-<h2>3️⃣ Comparte</h2>
-
-<p>Cualquier persona puede escanear tu QR.</p>
-
-</div>
-
-<div>
-
-<h2>4️⃣ Crece</h2>
-
-<p>Obtén seguidores, likes y estadísticas.</p>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
+</h2>
 
 <p>
 
-© 2026 HRYET
+Suscríbete y recibe ofertas, nuevas colecciones y promociones exclusivas.
 
 </p>
 
+<form class="newsletter-form">
+
+<input
+
+type="email"
+
+placeholder="Correo electrónico">
+
+<button>
+
+Suscribirme
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+<div class="footer-logo">
+
+HRYET
+
+</div>
+
+<p>
+
+Lleva tu identidad al siguiente nivel.
+
+</p>
+
+<div class="footer-links">
+
+<a href="../index.html">
+
+Inicio
+
+</a>
+
+<a href="store.html">
+
+Tienda
+
+</a>
+
+<a href="profile.html">
+
+Perfil QR
+
+</a>
+
+<a href="login.html">
+
+Login
+
+</a>
+
+<a href="register.html">
+
+Registro
+
+</a>
+
+</div>
+
+<div class="social">
+
+<a href="#">
+
+Instagram
+
+</a>
+
+<a href="#">
+
+TikTok
+
+</a>
+
+<a href="#">
+
+Facebook
+
+</a>
+
+<a href="#">
+
+YouTube
+
+</a>
+
+</div>
+
+<small>
+
+© 2026 HRYET. Todos los derechos reservados.
+
+</small>
+
 </footer>
 
+<script type="module" src="../js/firebase.js"></script>
+
 <script type="module" src="../js/store.js"></script>
+
+<script type="module" src="../js/cart.js"></script>
+
+<script type="module" src="../js/main.js"></script>
 
 </body>
 
