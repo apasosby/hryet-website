@@ -1,1 +1,331 @@
-T
+/* ==========================================
+   HRYET STORE
+========================================== */
+
+.store{
+
+min-height:100vh;
+
+padding:140px 40px 80px;
+
+background:linear-gradient(180deg,#050505,#0b0b0b);
+
+color:white;
+
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.store-header{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.store-header h1{
+
+font-size:60px;
+
+margin-bottom:20px;
+
+font-weight:800;
+
+}
+
+.store-header p{
+
+max-width:750px;
+
+margin:auto;
+
+color:#9e9e9e;
+
+font-size:18px;
+
+}
+
+/* ==========================
+   BUSCADOR
+========================== */
+
+.search-box{
+
+max-width:600px;
+
+margin:40px auto;
+
+display:flex;
+
+gap:15px;
+
+}
+
+.search-box input{
+
+flex:1;
+
+padding:18px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:50px;
+
+color:white;
+
+outline:none;
+
+}
+
+.search-box button{
+
+padding:18px 35px;
+
+background:var(--primary);
+
+color:white;
+
+border-radius:50px;
+
+font-weight:700;
+
+}
+
+.search-box button:hover{
+
+background:var(--primary-light);
+
+}
+
+/* ==========================
+   CATEGORIAS
+========================== */
+
+.categories{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+margin-bottom:50px;
+
+}
+
+.categories button{
+
+background:rgba(255,255,255,.05);
+
+color:white;
+
+padding:14px 28px;
+
+border-radius:40px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.categories button:hover{
+
+background:var(--primary);
+
+}
+
+/* ==========================
+   PRODUCTOS
+========================== */
+
+.products{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+.product-card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:25px;
+
+overflow:hidden;
+
+transition:.35s;
+
+backdrop-filter:blur(15px);
+
+}
+
+.product-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:var(--shadow);
+
+}
+
+.product-image{
+
+height:340px;
+
+background:#101010;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+.product-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.4s;
+
+}
+
+.product-card:hover img{
+
+transform:scale(1.05);
+
+}
+
+.product-info{
+
+padding:25px;
+
+}
+
+.product-info h3{
+
+font-size:24px;
+
+margin-bottom:12px;
+
+}
+
+.product-info p{
+
+color:#9d9d9d;
+
+margin-bottom:18px;
+
+}
+
+.price{
+
+font-size:26px;
+
+font-weight:800;
+
+color:var(--primary-light);
+
+margin-bottom:20px;
+
+}
+
+.actions{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.actions button{
+
+flex:1;
+
+padding:14px;
+
+border-radius:40px;
+
+font-weight:700;
+
+}
+
+.buy{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+.buy:hover{
+
+background:var(--primary-light);
+
+}
+
+.cart{
+
+background:transparent;
+
+border:1px solid rgba(255,255,255,.15);
+
+color:white;
+
+}
+
+.cart:hover{
+
+background:white;
+
+color:black;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+.store{
+
+padding:120px 20px;
+
+}
+
+.store-header h1{
+
+font-size:42px;
+
+}
+
+.search-box{
+
+flex-direction:column;
+
+}
+
+.actions{
+
+flex-direction:column;
+
+}
+
+}
