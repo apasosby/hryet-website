@@ -1,1 +1,375 @@
-B
+/* ==========================================
+   HRYET ADMIN PANEL
+========================================== */
+
+.admin{
+
+min-height:100vh;
+
+padding:140px 40px 60px;
+
+background:linear-gradient(180deg,#050505,#0d0d0d);
+
+color:#fff;
+
+font-family:var(--font-main);
+
+}
+
+.admin-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:40px;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.admin-title{
+
+font-size:42px;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+}
+
+.admin-subtitle{
+
+color:#a8a8a8;
+
+margin-top:10px;
+
+font-size:17px;
+
+}
+
+.admin-button{
+
+background:var(--primary);
+
+color:#fff;
+
+padding:15px 30px;
+
+border-radius:50px;
+
+font-weight:700;
+
+transition:.35s;
+
+box-shadow:var(--shadow);
+
+}
+
+.admin-button:hover{
+
+background:var(--primary-light);
+
+transform:translateY(-4px);
+
+}
+
+.admin-grid{
+
+display:grid;
+
+grid-template-columns:300px 1fr;
+
+gap:30px;
+
+}
+
+/* =======================
+SIDEBAR
+======================= */
+
+.sidebar{
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+padding:30px;
+
+}
+
+.sidebar h3{
+
+margin-bottom:25px;
+
+font-size:22px;
+
+}
+
+.sidebar ul{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.sidebar li{
+
+list-style:none;
+
+}
+
+.sidebar a{
+
+display:block;
+
+padding:14px 18px;
+
+border-radius:15px;
+
+transition:.35s;
+
+color:#ddd;
+
+font-weight:600;
+
+}
+
+.sidebar a:hover{
+
+background:rgba(138,43,226,.2);
+
+color:#fff;
+
+}
+
+/* =======================
+CONTENT
+======================= */
+
+.admin-content{
+
+display:flex;
+
+flex-direction:column;
+
+gap:30px;
+
+}
+
+/* =======================
+CARDS
+======================= */
+
+.admin-cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+gap:25px;
+
+}
+
+.admin-card{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+padding:30px;
+
+transition:.35s;
+
+}
+
+.admin-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:var(--shadow);
+
+}
+
+.admin-card h2{
+
+font-size:40px;
+
+margin-bottom:10px;
+
+}
+
+.admin-card span{
+
+color:#aaa;
+
+}
+
+/* =======================
+TABLAS
+======================= */
+
+.table{
+
+width:100%;
+
+border-collapse:collapse;
+
+background:rgba(255,255,255,.04);
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+.table th{
+
+background:#111;
+
+padding:18px;
+
+text-align:left;
+
+}
+
+.table td{
+
+padding:18px;
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.table tr:hover{
+
+background:rgba(255,255,255,.03);
+
+}
+
+/* =======================
+FORMULARIOS
+======================= */
+
+.admin-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.admin-form input,
+
+.admin-form textarea,
+
+.admin-form select{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+padding:16px;
+
+border-radius:18px;
+
+color:#fff;
+
+outline:none;
+
+}
+
+.admin-form input:focus,
+
+.admin-form textarea:focus,
+
+.admin-form select:focus{
+
+border-color:var(--primary);
+
+box-shadow:0 0 20px rgba(138,43,226,.35);
+
+}
+
+/* =======================
+ESTADÍSTICAS
+======================= */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:20px;
+
+}
+
+.stat{
+
+background:rgba(255,255,255,.04);
+
+padding:25px;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+.stat h3{
+
+font-size:38px;
+
+margin-bottom:10px;
+
+}
+
+.stat p{
+
+color:#999;
+
+}
+
+/* =======================
+RESPONSIVE
+======================= */
+
+@media(max-width:900px){
+
+.admin-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+order:2;
+
+}
+
+.admin-content{
+
+order:1;
+
+}
+
+}
