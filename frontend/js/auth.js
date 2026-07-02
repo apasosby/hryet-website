@@ -176,3 +176,214 @@ if (registerForm) {
   });
 
 }
+// ======================================
+// Inicio de sesión
+// ======================================
+
+const loginForm = document.getElementById("loginForm");
+
+if (loginForm) {
+
+  loginForm.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    try {
+
+      const correo = document.getElementById("correo").value.trim();
+
+      const password = document.getElementById("password").value;
+
+      await signInWithEmailAndPassword(
+
+        auth,
+
+        correo,
+
+        password
+
+      );
+
+      alert("✅ Bienvenido a HRYET.");
+
+      window.location.href = "dashboard.html";
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert("Correo o contraseña incorrectos.");
+
+    }
+
+  });
+
+}
+
+
+// ======================================
+// Iniciar sesión con Google
+// ======================================
+
+const googleButton = document.querySelector(".google-login");
+
+if (googleButton) {
+
+  googleButton.addEventListener("click", async () => {
+
+    try {
+
+      await signInWithPopup(
+
+        auth,
+
+        googleProvider
+
+      );
+
+      window.location.href = "dashboard.html";
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert(error.message);
+
+    }
+
+  });
+
+}
+// ======================================
+// Estado de autenticación
+// ======================================
+
+onAuthStateChanged(auth, (user) => {
+
+  const currentPage = window.location.pathname;
+
+  const protectedPages = [
+
+    "dashboard.html",
+
+    "profile.html",
+
+    "admin.html",
+
+    "settings.html"
+
+  ];
+
+  const isProtected = protectedPages.some(page =>
+    currentPage.includes(page)
+  );
+
+  if (user) {
+
+    console.log("Usuario autenticado:", user.email);
+
+  } else {
+
+    console.log("No hay sesión iniciada.");
+
+    if (isProtected) {
+
+      window.location.href = "login.html";
+
+    }
+
+  }
+
+});
+
+
+// ======================================
+// Cerrar sesión
+// ======================================
+
+const logoutButton = document.getElementById("logout");
+
+if (logoutButton) {
+
+  logoutButton.addEventListener("click", async (e) => {
+
+    e.preventDefault();
+
+    try {
+
+      await signOut(auth);
+
+      alert("Sesión cerrada correctamente.");
+
+      window.location.href = "login.html";
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert("No se pudo cerrar la sesión.");
+
+    }
+
+  });
+
+}
+// ======================================
+// Recuperar contraseña
+// ======================================
+
+async function resetPassword(email) {
+
+  try {
+
+    await sendPasswordResetEmail(auth, email);
+
+    alert("Se ha enviado un enlace para restablecer tu contraseña.");
+
+  } catch (error) {
+
+    console.error(error);
+
+    alert("No fue posible enviar el correo de recuperación.");
+
+  }
+
+}
+
+
+// ======================================
+// Formulario de recuperación
+// ======================================
+
+const forgotPasswordLink = document.querySelector(
+  'a[href="forgot-password.html"]'
+);
+
+if (forgotPasswordLink) {
+
+  forgotPasswordLink.addEventListener("click", async (e) => {
+
+    e.preventDefault();
+
+    const email = prompt("Introduce tu correo electrónico:");
+
+    if (!email) return;
+
+    await resetPassword(email);
+
+  });
+
+}
+
+
+// ======================================
+// Utilidades
+// ======================================
+
+export {
+
+  resetPassword
+
+};
+
+console.log("✅ auth.js cargado correctamente.");
