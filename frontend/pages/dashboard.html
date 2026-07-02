@@ -7,9 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dashboard | HRYET</title>
+<title>
 
-<link rel="stylesheet" href="../css/panel.css">
+HRYET | Dashboard
+
+</title>
+
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
@@ -17,100 +29,650 @@
 
 <header>
 
+<nav class="navbar">
+
 <div class="logo">
+
+<a href="../index.html">
 
 HRYET
 
+</a>
+
 </div>
 
-<nav>
+<ul>
 
-<a href="../index.html">Inicio</a>
+<li><a href="../index.html">Inicio</a></li>
 
-<a href="profile.html">Perfil</a>
+<li><a href="store.html">Tienda</a></li>
 
-<a href="store.html">Tienda</a>
+<li><a href="profile.html">Mi Perfil</a></li>
 
-<button id="logout">
+<li><a href="#" id="logout">Cerrar sesión</a></li>
 
-Cerrar sesión
-
-</button>
+</ul>
 
 </nav>
 
 </header>
 
-<main class="dashboard">
+<section class="dashboard">
 
-<h1>
+<div class="dashboard-header">
 
-Bienvenido a HRYET
+<div>
+
+<h1 class="dashboard-title">
+
+Mi Panel
 
 </h1>
 
-<div class="cards">
+<p class="dashboard-subtitle">
 
-<div class="card">
+Bienvenido a tu identidad digital.
 
-<h2>❤️ Likes</h2>
-
-<h1 id="likesTotal">0</h1>
+</p>
 
 </div>
 
-<div class="card">
-
-<h2>👥 Seguidores</h2>
-
-<h1 id="followersTotal">0</h1>
-
-</div>
-
-<div class="card">
-
-<h2>📷 Escaneos QR</h2>
-
-<h1 id="qrTotal">0</h1>
-
-</div>
-
-<div class="card">
-
-<h2>👕 Camisetas</h2>
-
-<h1 id="shirtsTotal">0</h1>
-
-</div>
-
-</div>
-
-<section class="acciones">
-
-<button onclick="location.href='profile.html'">
+<button>
 
 Editar Perfil
 
 </button>
 
-<button onclick="location.href='store.html'">
+</div>
 
-Ir a la Tienda
+<div class="dashboard-grid">
+
+<div class="profile-card">
+
+<img
+
+src="../assets/images/avatar.png"
+
+class="profile-avatar"
+
+id="profileImage"
+
+alt="Perfil">
+
+<h2 id="userName">
+
+Cargando...
+
+</h2>
+
+<p id="userUsername">
+
+@usuario
+
+</p>
+
+<p id="userBio">
+
+Tu biografía aparecerá aquí.
+
+</p>
+
+</div>
+
+<div>
+
+<div class="dashboard-stats">
+
+<div class="stat-card">
+
+<h2 id="scanCount">
+
+0
+
+</h2>
+
+<span>
+
+Escaneos
+
+</span>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="likesCount">
+
+0
+
+</h2>
+
+<span>
+
+Me gusta
+
+</span>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="followersCount">
+
+0
+
+</h2>
+
+<span>
+
+Seguidores
+
+</span>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="ordersCount">
+
+0
+
+</h2>
+
+<span>
+
+Pedidos
+
+</span>
+
+</div>
+
+</div>
+<!-- ========================= -->
+<!-- MI CÓDIGO QR -->
+<!-- ========================= -->
+
+<div class="dashboard-card">
+
+<h2>
+
+Mi Código QR
+
+</h2>
+
+<div class="qr-container">
+
+<img
+
+src="../assets/images/qr-demo.png"
+
+alt="QR"
+
+id="userQR">
+
+<p>
+
+Comparte tu perfil HRYET escaneando este código.
+
+</p>
+
+<button id="downloadQR">
+
+Descargar QR
 
 </button>
 
-<button onclick="location.href='../index.html'">
+</div>
 
-Volver al Inicio
+</div>
+
+<!-- ========================= -->
+<!-- MIS CAMISETAS -->
+<!-- ========================= -->
+
+<div class="dashboard-card">
+
+<h2>
+
+Mis Camisetas
+
+</h2>
+
+<div class="products">
+
+<div class="product-card">
+
+<img src="../assets/images/shirt1.png" alt="Shirt">
+
+<h3>
+
+HRYET Premium
+
+</h3>
+
+<p>
+
+Personalizada
+
+</p>
+
+</div>
+
+<div class="product-card">
+
+<img src="../assets/images/shirt2.png" alt="Shirt">
+
+<h3>
+
+Luxury Edition
+
+</h3>
+
+<p>
+
+En Producción
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- PEDIDOS -->
+<!-- ========================= -->
+
+<div class="dashboard-card">
+
+<h2>
+
+Pedidos Recientes
+
+</h2>
+
+<table class="orders-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Producto</th>
+
+<th>Estado</th>
+
+<th>Total</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>#1001</td>
+
+<td>HRYET Premium</td>
+
+<td>Enviado</td>
+
+<td>$59.99</td>
+
+</tr>
+
+<tr>
+
+<td>#1002</td>
+
+<td>Luxury Edition</td>
+
+<td>Preparando</td>
+
+<td>$69.99</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- CONFIGURACIÓN -->
+<!-- ========================= -->
+
+<section class="settings">
+
+<div class="container">
+
+<h2>
+
+Configuración de la Cuenta
+
+</h2>
+
+<div class="settings-grid">
+
+<div class="setting-card">
+
+<h3>
+
+👤 Información Personal
+
+</h3>
+
+<p>
+
+Actualiza tu nombre, usuario, biografía y foto de perfil.
+
+</p>
+
+<button>
+
+Editar Perfil
 
 </button>
+
+</div>
+
+<div class="setting-card">
+
+<h3>
+
+📱 Redes Sociales
+
+</h3>
+
+<p>
+
+Conecta Instagram, TikTok y Facebook con tu perfil QR.
+
+</p>
+
+<button>
+
+Administrar
+
+</button>
+
+</div>
+
+<div class="setting-card">
+
+<h3>
+
+📍 Dirección de Envío
+
+</h3>
+
+<p>
+
+Guarda una o varias direcciones para tus pedidos.
+
+</p>
+
+<button>
+
+Editar Dirección
+
+</button>
+
+</div>
+
+<div class="setting-card">
+
+<h3>
+
+💳 Métodos de Pago
+
+</h3>
+
+<p>
+
+Administra tus tarjetas y métodos de pago.
+
+</p>
+
+<button>
+
+Administrar Pagos
+
+</button>
+
+</div>
+
+<div class="setting-card">
+
+<h3>
+
+🔔 Notificaciones
+
+</h3>
+
+<p>
+
+Elige cómo deseas recibir avisos y promociones.
+
+</p>
+
+<button>
+
+Configurar
+
+</button>
+
+</div>
+
+<div class="setting-card">
+
+<h3>
+
+🔒 Seguridad
+
+</h3>
+
+<p>
+
+Cambia tu contraseña y protege tu cuenta.
+
+</p>
+
+<button>
+
+Cambiar Contraseña
+
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
-</main>
+<!-- ========================= -->
+<!-- ACTIVIDAD RECIENTE -->
+<!-- ========================= -->
+
+<section class="activity">
+
+<div class="container">
+
+<h2>
+
+Actividad Reciente
+
+</h2>
+
+<ul class="activity-list">
+
+<li>
+
+✅ Tu perfil fue actualizado.
+
+</li>
+
+<li>
+
+📦 Pedido #1002 recibido correctamente.
+
+</li>
+
+<li>
+
+❤️ Recibiste 12 nuevos Me gusta.
+
+</li>
+
+<li>
+
+📱 Tu código QR fue escaneado 8 veces hoy.
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- NEWSLETTER -->
+<!-- ========================= -->
+
+<section class="newsletter">
+
+<div class="container">
+
+<h2>
+
+Únete a la comunidad HRYET
+
+</h2>
+
+<p>
+
+Recibe nuevos lanzamientos, descuentos exclusivos y noticias.
+
+</p>
+
+<form id="newsletterForm" class="newsletter-form">
+
+<input
+
+type="email"
+
+id="newsletterEmail"
+
+placeholder="Tu correo electrónico"
+
+required>
+
+<button type="submit">
+
+Suscribirme
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+<div class="footer-logo">
+
+<a href="../index.html">
+
+HRYET
+
+</a>
+
+</div>
+
+<p>
+
+Más que una camiseta. Tu identidad digital.
+
+</p>
+
+<div class="footer-links">
+
+<a href="../index.html">
+
+Inicio
+
+</a>
+
+<a href="store.html">
+
+Tienda
+
+</a>
+
+<a href="product.html">
+
+Productos
+
+</a>
+
+<a href="cart.html">
+
+Carrito
+
+</a>
+
+<a href="profile.html">
+
+Mi Perfil
+
+</a>
+
+</div>
+
+<div class="social">
+
+<a href="#">Instagram</a>
+
+<a href="#">TikTok</a>
+
+<a href="#">Facebook</a>
+
+<a href="#">YouTube</a>
+
+</div>
+
+<small>
+
+© 2026 HRYET. Todos los derechos reservados.
+
+</small>
+
+</footer>
+
+<script type="module" src="../js/firebase.js"></script>
+
+<script type="module" src="../js/auth.js"></script>
 
 <script type="module" src="../js/dashboard.js"></script>
-<script type="module" src="../js/auth.js"></script>
+
+<script type="module" src="../js/main.js"></script>
+
+<script type="module" src="../js/app.js"></script>
 
 </body>
 
