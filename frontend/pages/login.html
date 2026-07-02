@@ -7,24 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-
-HRYET | Iniciar Sesión
-
-</title>
+<title>HRYET | Iniciar Sesión</title>
 
 <link rel="stylesheet" href="../css/variables.css">
-
 <link rel="stylesheet" href="../css/style.css">
-
 <link rel="stylesheet" href="../css/navbar.css">
-
 <link rel="stylesheet" href="../css/login.css">
-
 <link rel="stylesheet" href="../css/footer.css">
-
 <link rel="stylesheet" href="../css/animations.css">
-
 <link rel="stylesheet" href="../css/responsive.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -39,7 +29,11 @@ HRYET | Iniciar Sesión
 
 <div class="logo">
 
+<a href="../index.html">
+
 HRYET
+
+</a>
 
 </div>
 
@@ -77,13 +71,11 @@ Bienvenido
 
 <p class="login-text">
 
-Inicia sesión para acceder a tu identidad digital, pedidos y perfil QR.
+Inicia sesión para acceder a tu perfil, tus pedidos y tu identidad digital.
 
 </p>
 
-<form
-id="loginForm"
-class="login-form">
+<form id="loginForm" class="login-form">
 
 <label>
 
@@ -116,3 +108,262 @@ id="password"
 placeholder="********"
 
 required>
+
+<div class="login-options">
+
+<label>
+
+<input type="checkbox">
+
+Recordarme
+
+</label>
+
+<a href="forgot-password.html">
+
+¿Olvidaste tu contraseña?
+
+</a>
+
+</div>
+
+<button type="submit">
+
+Iniciar Sesión
+
+</button>
+
+</form>
+
+<div class="login-divider">
+
+<span>
+
+o continúa con
+
+</span>
+
+</div>
+
+<div class="social-login">
+
+<button type="button" class="google-login">
+
+<img src="../assets/icons/google.svg" alt="Google">
+
+Continuar con Google
+
+</button>
+
+<button type="button" class="apple-login">
+
+<img src="../assets/icons/apple.svg" alt="Apple">
+
+Continuar con Apple
+
+</button>
+
+</div>
+
+<div class="login-register">
+
+<p>
+
+¿No tienes una cuenta?
+
+<a href="register.html">
+
+Crear Cuenta
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- BENEFICIOS -->
+<!-- ========================= -->
+
+<section class="benefits">
+
+<div class="container">
+
+<h2>
+
+¿Por qué crear una cuenta?
+
+</h2>
+
+<div class="features-grid">
+
+<div class="card">
+
+<h3>👤 Perfil Digital</h3>
+
+<p>
+
+Administra tu identidad digital y tu código QR único.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>👕 Tus Diseños</h3>
+
+<p>
+
+Guarda todas tus camisetas personalizadas para volver a comprarlas.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📦 Tus Pedidos</h3>
+
+<p>
+
+Consulta el estado de tus compras en tiempo real.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🔒 Seguridad</h3>
+
+<p>
+
+Tu cuenta estará protegida mediante Firebase Authentication.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- NEWSLETTER -->
+<!-- ========================= -->
+
+<section class="newsletter">
+
+<div class="container">
+
+<h2>
+
+Únete a HRYET
+
+</h2>
+
+<p>
+
+Recibe promociones exclusivas, nuevos lanzamientos y noticias.
+
+</p>
+
+<form id="newsletterForm" class="newsletter-form">
+
+<input
+
+type="email"
+
+id="newsletterEmail"
+
+placeholder="Tu correo electrónico"
+
+required>
+
+<button type="submit">
+
+Suscribirme
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+<div class="footer-logo">
+
+<a href="../index.html">
+
+HRYET
+
+</a>
+
+</div>
+
+<p>
+
+Más que una camiseta. Tu identidad digital.
+
+</p>
+
+<div class="footer-links">
+
+<a href="../index.html">Inicio</a>
+
+<a href="store.html">Tienda</a>
+
+<a href="product.html">Productos</a>
+
+<a href="cart.html">Carrito</a>
+
+<a href="profile.html">Perfil QR</a>
+
+<a href="register.html">Crear Cuenta</a>
+
+</div>
+
+<div class="social">
+
+<a href="#">Instagram</a>
+
+<a href="#">TikTok</a>
+
+<a href="#">Facebook</a>
+
+<a href="#">YouTube</a>
+
+</div>
+
+<small>
+
+© 2026 HRYET. Todos los derechos reservados.
+
+</small>
+
+</footer>
+
+<script type="module" src="../js/firebase.js"></script>
+
+<script type="module" src="../js/auth.js"></script>
+
+<script type="module" src="../js/main.js"></script>
+
+<script type="module" src="../js/app.js"></script>
+
+</body>
+
+</html>
