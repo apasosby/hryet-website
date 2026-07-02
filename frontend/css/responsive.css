@@ -1,1 +1,181 @@
-J
+/* ==========================================
+   HRYET RESPONSIVE
+========================================== */
+
+/* ==========================
+   TABLETS
+========================== */
+
+@media(max-width:1024px){
+
+.hero h1{
+
+font-size:60px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+}
+
+.features{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.navbar{
+
+padding:15px 0;
+
+}
+
+}
+
+/* ==========================
+   MOVILES
+========================== */
+
+@media(max-width:768px){
+
+.navbar{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.navbar ul{
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.hero{
+
+padding:160px 30px 100px;
+
+}
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+width:100%;
+
+}
+
+.hero-buttons button{
+
+width:100%;
+
+}
+
+.features{
+
+grid-template-columns:1fr;
+
+}
+
+.card{
+
+padding:30px;
+
+}
+
+.about{
+
+padding:80px 30px;
+
+}
+
+.cta{
+
+padding:100px 30px;
+
+}
+
+}
+
+/* ==========================
+   IPHONE PEQUEÑOS
+========================== */
+
+@media(max-width:480px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.logo{
+
+font-size:28px;
+
+}
+
+button{
+
+padding:15px 25px;
+
+font-size:15px;
+
+}
+
+footer{
+
+padding:50px 20px;
+
+}
+
+}
+
+/* ==========================
+   PANTALLAS GRANDES
+========================== */
+
+@media(min-width:1600px){
+
+.hero h1{
+
+font-size:110px;
+
+}
+
+.hero p{
+
+font-size:24px;
+
+}
+
+.container{
+
+max-width:1600px;
+
+}
+
+}
