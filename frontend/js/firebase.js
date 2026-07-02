@@ -1,12 +1,35 @@
-// Importar Firebase
+// ==============================
+// HRYET - Firebase
+// ==============================
+
+// Firebase App
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+// Authentication
+import {
+  getAuth
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+// Firestore
+import {
+  getFirestore
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// Storage
+import {
+  getStorage
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+// Analytics
+import {
+  getAnalytics
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 
 
-// Configuración de Firebase
+// ==============================
+// Configuración Firebase
+// ==============================
+
 const firebaseConfig = {
 
   apiKey: "AIzaSyCoNoiTkueaqHxBwEUig3d9BX0taTjr3jc",
@@ -26,13 +49,43 @@ const firebaseConfig = {
 };
 
 
+// ==============================
 // Inicializar Firebase
+// ==============================
+
 const app = initializeApp(firebaseConfig);
 
 
-// Exportar servicios
-export const auth = getAuth(app);
+// Analytics
+const analytics = getAnalytics(app);
 
-export const db = getFirestore(app);
 
-export default app;
+// Authentication
+const auth = getAuth(app);
+
+
+// Firestore
+const db = getFirestore(app);
+
+
+// Storage
+const storage = getStorage(app);
+
+
+// ==============================
+// Exportaciones
+// ==============================
+
+export {
+
+  app,
+
+  analytics,
+
+  auth,
+
+  db,
+
+  storage
+
+};
