@@ -1,89 +1,270 @@
-// ========================================
-// HRYET - Firebase + Google Analytics
-// ========================================
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCoNoiTkueaqHxBwEUig3d9BX0taTjr3jc",
-  authDomain: "hryet-f2de3.firebaseapp.com",
-  projectId: "hryet-f2de3",
-  storageBucket: "hryet-f2de3.firebasestorage.app",
-  messagingSenderId: "839699465873",
-  appId: "1:839699465873:web:4cbb72d912c676b537a130",
-  measurementId: "G-8DK6LSF1TT"
-};
-
-// Inicializar Firebase
-const app = initializeApp(firebaseConfig);
-
-// Inicializar Analytics
-let analytics = null;
-
-if (typeof window !== "undefined") {
-  analytics = getAnalytics(app);
-}
-
-console.log("✅ Firebase y Google Analytics iniciados");
-
-// ========================================
-// HRYET
-// ========================================
+// ======================================
+// HRYET - Main JS
+// ======================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🚀 Página cargada");
-  iniciarBotones();
-  iniciarAnimaciones();
+
+    console.log("✅ HRYET cargado correctamente.");
+
+    initializeNavbar();
+
+    initializeScrollTop();
+
+    initializeNewsletter();
+
+    initializeAnimations();
+
 });
 
-// ==============================
-// BOTONES
-// ==============================
+// ======================================
+// Navbar
+// ======================================
 
-function iniciarBotones() {
-  const botones = document.querySelectorAll("button");
+function initializeNavbar() {
 
-  botones.forEach((boton) => {
-    boton.addEventListener("mouseenter", () => {
-      boton.style.transform = "scale(1.05)";
+    const menuButton = document.getElementById("menuButton");
+
+    const navMenu = document.getElementById("navMenu");
+
+    if (!menuButton || !navMenu) return;
+
+    menuButton.addEventListener("click", () => {
+
+        navMenu.classList.toggle("active");
+
     });
 
-    boton.addEventListener("mouseleave", () => {
-      boton.style.transform = "scale(1)";
+}
+// ======================================
+// Botón Volver Arriba
+// ======================================
+
+function initializeScrollTop() {
+
+    const scrollButton = document.getElementById("scrollTop");
+
+    if (!scrollButton) return;
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+
+            scrollButton.classList.add("show");
+
+        } else {
+
+            scrollButton.classList.remove("show");
+
+        }
+
     });
-  });
+
+    scrollButton.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
 }
 
-// ==============================
-// ANIMACIONES
-// ==============================
 
-function iniciarAnimaciones() {
-  const secciones = document.querySelectorAll("section");
+// ======================================
+// Animaciones
+// ======================================
 
-  secciones.forEach((seccion) => {
-    seccion.style.opacity = "0";
+function initializeAnimations() {
 
-    setTimeout(() => {
-      seccion.style.transition = "1s";
-      seccion.style.opacity = "1";
-    }, 300);
-  });
+    const sections = document.querySelectorAll("section");
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            }
+
+        });
+
+    }, {
+
+        threshold: 0.15
+
+    });
+
+    sections.forEach((section) => {
+
+        observer.observe(section);
+
+    });
+
+}
+// ======================================
+// Newsletter
+// ======================================
+
+function initializeNewsletter() {
+
+    const newsletterForm = document.getElementById("newsletterForm");
+
+    if (!newsletterForm) return;
+
+    newsletterForm.addEventListener("submit", (e) => {
+
+        e.preventDefault();
+
+        const email = document.getElementById("newsletterEmail");
+
+        if (!email.value.trim()) {
+
+            alert("Por favor ingresa un correo electrónico.");
+
+            return;
+
+        }
+
+        alert("🎉 ¡Gracias por suscribirte a HRYET!");
+
+        newsletterForm.reset();
+
+    });
+
 }
 
-// ==============================
-// HEADER
-// ==============================
 
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
+// ======================================
+// Efectos en botones
+// ======================================
 
-  if (!header) return;
+function initializeButtons() {
 
-  if (window.scrollY > 50) {
-    header.style.background = "#000";
-  } else {
-    header.style.background = "#111";
-  }
-});
+    const buttons = document.querySelectorAll("button");
+
+    buttons.forEach((button) => {
+
+        button.addEventListener("mouseenter", () => {
+
+            button.style.transform = "translateY(-3px)";
+
+            button.style.transition = "0.3s";
+
+        });
+
+        button.addEventListener("mouseleave", () => {
+
+            button.style.transform = "translateY(0)";
+
+        });
+
+    });
+
+}
+
+
+// ======================================
+// Efectos en tarjetas
+// ======================================
+
+function initializeCards() {
+
+    const cards = document.querySelectorAll(".card, .product-card, .admin-card, .stat-card");
+
+    cards.forEach((card) => {
+
+        card.addEventListener("mouseenter", () => {
+
+            card.style.transform = "translateY(-8px)";
+
+            card.style.transition = "0.3s";
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform = "translateY(0)";
+
+        });
+
+    });
+
+}
+
+initializeButtons();
+
+initializeCards();
+// ======================================
+// Tema (Preparado para futuras versiones)
+// ======================================
+
+function initializeTheme() {
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+
+        document.body.setAttribute("data-theme", savedTheme);
+
+    }
+
+}
+
+initializeTheme();
+
+
+// ======================================
+// Utilidades
+// ======================================
+
+function showNotification(message) {
+
+    alert(message);
+
+}
+
+window.showNotification = showNotification;
+
+
+// ======================================
+// Header dinámico
+// ======================================
+
+function initializeHeader() {
+
+    const header = document.querySelector("header");
+
+    if (!header) return;
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 80) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    });
+
+}
+
+initializeHeader();
+
+
+// ======================================
+// Fin del archivo
+// ======================================
+
+console.log("✅ main.js cargado correctamente.");
