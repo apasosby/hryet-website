@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
@@ -10,7 +9,7 @@
 
 <title>
 
-HRYET | Perfil
+HRYET | Panel de Administración
 
 </title>
 
@@ -20,7 +19,7 @@ HRYET | Perfil
 
 <link rel="stylesheet" href="../css/navbar.css">
 
-<link rel="stylesheet" href="../css/profile.css">
+<link rel="stylesheet" href="../css/admin.css">
 
 <link rel="stylesheet" href="../css/footer.css">
 
@@ -50,11 +49,35 @@ HRYET
 
 <ul>
 
-<li><a href="../index.html">Inicio</a></li>
+<li>
 
-<li><a href="store.html">Tienda</a></li>
+<a href="../index.html">
 
-<li><a href="login.html">Iniciar Sesión</a></li>
+Inicio
+
+</a>
+
+</li>
+
+<li>
+
+<a href="dashboard.html">
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#" id="logout">
+
+Cerrar sesión
+
+</a>
+
+</li>
 
 </ul>
 
@@ -62,455 +85,621 @@ HRYET
 
 </header>
 
-<section class="profile">
+<section class="admin">
 
-<div class="profile-header">
+<div class="container">
 
-<img
+<h1>
 
-src="../assets/images/avatar.png"
-
-id="profileImage"
-
-class="profile-avatar"
-
-alt="Perfil">
-
-<h1 id="profileName">
-
-Nombre del Usuario
+Panel de Administración
 
 </h1>
 
-<p id="profileUsername">
+<p>
 
-@usuario
-
-</p>
-
-<p id="profileBio">
-
-Aquí aparecerá la biografía del usuario.
+Administra toda la plataforma HRYET desde un solo lugar.
 
 </p>
 
-<div class="verified-badge">
+<div class="admin-stats">
 
-✅ Cuenta Verificada
-
-</div>
-
-</div>
-
-<div class="profile-stats">
-
-<div class="stat-card">
-
-<h2 id="profileScans">
-
-0
-
-</h2>
-
-<span>
-
-Escaneos
-
-</span>
-
-</div>
-
-<div class="stat-card">
-
-<h2 id="profileLikes">
-
-0
-
-</h2>
-
-<span>
-
-Me gusta
-
-</span>
-
-</div>
-
-<div class="stat-card">
-
-<h2 id="profileFollowers">
-
-0
-
-</h2>
-
-<span>
-
-Seguidores
-
-</span>
-
-</div>
-
-<div class="stat-card">
-
-<h2 id="profileFollowing">
-
-0
-
-</h2>
-
-<span>
-
-Siguiendo
-
-</span>
-
-</div>
-
-</div>
-<!-- ========================= -->
-<!-- CÓDIGO QR -->
-<!-- ========================= -->
-
-<div class="profile-section">
+<div class="admin-card">
 
 <h2>
 
-Mi Código QR
+👥 Usuarios
 
 </h2>
 
-<div class="qr-box">
+<h3 id="totalUsers">
 
-<img
+0
 
-src="../assets/images/qr-demo.png"
-
-id="profileQR"
-
-alt="Código QR">
+</h3>
 
 <p>
 
-Escanea este código para visitar este perfil.
+Usuarios registrados
 
 </p>
 
-<button id="downloadQR">
-
-Descargar QR
-
-</button>
-
 </div>
 
-</div>
-
-<!-- ========================= -->
-<!-- REDES SOCIALES -->
-<!-- ========================= -->
-
-<div class="profile-section">
+<div class="admin-card">
 
 <h2>
 
-Redes Sociales
+👕 Productos
 
 </h2>
 
-<div class="social-links">
+<h3 id="totalProducts">
 
-<a id="instagramLink" href="#" target="_blank">
-
-📷 Instagram
-
-</a>
-
-<a id="tiktokLink" href="#" target="_blank">
-
-🎵 TikTok
-
-</a>
-
-<a id="facebookLink" href="#" target="_blank">
-
-📘 Facebook
-
-</a>
-
-</div>
-
-</div>
-
-<!-- ========================= -->
-<!-- ACCIONES -->
-<!-- ========================= -->
-
-<div class="profile-actions">
-
-<button id="followBtn">
-
-❤️ Seguir
-
-</button>
-
-<button id="likeBtn">
-
-👍 Me gusta
-
-</button>
-
-<button id="shareBtn">
-
-📤 Compartir Perfil
-
-</button>
-
-</div>
-
-<!-- ========================= -->
-<!-- ENLACE DEL PERFIL -->
-<!-- ========================= -->
-
-<div class="profile-link">
-
-...
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- CAMISETAS -->
-
-
-<h3>
-
-Enlace Público
+0
 
 </h3>
+
+<p>
+
+Productos activos
+
+</p>
+
+</div>
+
+<div class="admin-card">
+
+<h2>
+
+📦 Pedidos
+
+</h2>
+
+<h3 id="totalOrders">
+
+0
+
+</h3>
+
+<p>
+
+Pedidos realizados
+
+</p>
+
+</div>
+
+<div class="admin-card">
+
+<h2>
+
+💰 Ventas
+
+</h2>
+
+<h3 id="totalSales">
+
+$0.00
+
+</h3>
+
+<p>
+
+Ventas totales
+
+</p>
+
+</div>
+
+</div>
+
+<div class="admin-menu">
+
+<button id="usersBtn">
+
+👥 Usuarios
+
+</button>
+
+<button id="productsBtn">
+
+👕 Productos
+
+</button>
+
+<button id="ordersBtn">
+
+📦 Pedidos
+
+</button>
+
+<button id="couponsBtn">
+
+🎟️ Cupones
+
+</button>
+
+<button id="analyticsBtn">
+
+📊 Estadísticas
+
+</button>
+
+<button id="settingsBtn">
+
+⚙️ Configuración
+
+</button>
+
+</div>
+
+<div class="admin-content">
+
+<h2>
+
+Resumen General
+
+</h2>
+
+<p>
+
+Selecciona una opción del menú para comenzar a administrar HRYET.
+
+</p>
+
+</div>
+<!-- ========================= -->
+<!-- USUARIOS -->
+<!-- ========================= -->
+
+<section class="admin-section">
+
+<h2>
+
+Administrar Usuarios
+
+</h2>
+
+<div class="search-box">
 
 <input
 
 type="text"
 
-id="profileUrl"
+id="searchUser"
 
-value="https://hryet.com/u/usuario"
+placeholder="Buscar usuario...">
 
-readonly>
+<button>
 
-<button id="copyLink">
-
-Copiar enlace
+Buscar
 
 </button>
 
 </div>
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+
+<th>Foto</th>
+
+<th>Nombre</th>
+
+<th>Usuario</th>
+
+<th>Correo</th>
+
+<th>Estado</th>
+
+<th>Acciones</th>
+
+</tr>
+
+</thead>
+
+<tbody id="usersTable">
+
+<tr>
+
+<td>
+
+<img src="../assets/images/avatar.png" width="40">
+
+</td>
+
+<td>
+
+Usuario Demo
+
+</td>
+
+<td>
+
+@usuario
+
+</td>
+
+<td>
+
+usuario@email.com
+
+</td>
+
+<td>
+
+Activo
+
+</td>
+
+<td>
+
+<button>
+
+Editar
+
+</button>
+
+<button>
+
+Suspender
+
+</button>
+
+<button>
+
+Eliminar
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
 <!-- ========================= -->
-<!-- CAMISETAS -->
+<!-- PRODUCTOS -->
 <!-- ========================= -->
 
-<section class="profile-products">
-
-<div class="container">
+<section class="admin-section">
 
 <h2>
 
-Camisetas HRYET
+Administrar Productos
 
 </h2>
 
-<div class="products">
+<button id="newProduct">
 
-<div class="product-card">
+➕ Nuevo Producto
 
-<img
+</button>
 
-src="../assets/images/shirt1.png"
+<table class="admin-table">
 
-alt="Camiseta">
+<thead>
 
-<h3>
+<tr>
+
+<th>Imagen</th>
+
+<th>Producto</th>
+
+<th>Precio</th>
+
+<th>Stock</th>
+
+<th>Estado</th>
+
+<th>Acciones</th>
+
+</tr>
+
+</thead>
+
+<tbody id="productsTable">
+
+<tr>
+
+<td>
+
+<img src="../assets/images/shirt1.png" width="50">
+
+</td>
+
+<td>
 
 HRYET Premium
 
-</h3>
+</td>
 
-<p>
+<td>
 
-Diseño personalizado.
+$59.99
 
-</p>
+</td>
 
-</div>
+<td>
 
-<div class="product-card">
+25
 
-<img
+</td>
 
-src="../assets/images/shirt2.png"
+<td>
 
-alt="Camiseta">
+Activo
+
+</td>
+
+<td>
+
+<button>
+
+Editar
+
+</button>
+
+<button>
+
+Eliminar
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+<!-- ========================= -->
+<!-- PEDIDOS -->
+<!-- ========================= -->
+
+<section class="admin-section">
+
+<h2>
+
+Gestión de Pedidos
+
+</h2>
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Cliente</th>
+
+<th>Producto</th>
+
+<th>Total</th>
+
+<th>Estado</th>
+
+<th>Acciones</th>
+
+</tr>
+
+</thead>
+
+<tbody id="ordersTable">
+
+<tr>
+
+<td>
+
+#1001
+
+</td>
+
+<td>
+
+Usuario Demo
+
+</td>
+
+<td>
+
+HRYET Premium
+
+</td>
+
+<td>
+
+$59.99
+
+</td>
+
+<td>
+
+Enviado
+
+</td>
+
+<td>
+
+<button>
+
+Ver
+
+</button>
+
+<button>
+
+Actualizar
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ========================= -->
+<!-- CUPONES -->
+<!-- ========================= -->
+
+<section class="admin-section">
+
+<h2>
+
+Cupones de Descuento
+
+</h2>
+
+<button id="newCoupon">
+
+➕ Crear Cupón
+
+</button>
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+
+<th>Código</th>
+
+<th>Descuento</th>
+
+<th>Expira</th>
+
+<th>Estado</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+
+HRYET10
+
+</td>
+
+<td>
+
+10%
+
+</td>
+
+<td>
+
+31/12/2026
+
+</td>
+
+<td>
+
+Activo
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ========================= -->
+<!-- ESTADÍSTICAS -->
+<!-- ========================= -->
+
+<section class="admin-section">
+
+<h2>
+
+Estadísticas
+
+</h2>
+
+<div class="admin-stats">
+
+<div class="admin-card">
 
 <h3>
 
-Luxury Edition
+📈 Ventas del Mes
 
 </h3>
 
-<p>
+<p id="monthSales">
 
-Edición exclusiva.
+$0.00
 
 </p>
 
 </div>
 
-<div class="product-card">
-
-<img
-
-src="../assets/images/shirt3.png"
-
-alt="Camiseta">
+<div class="admin-card">
 
 <h3>
 
-Custom QR
+👕 Producto Más Vendido
 
 </h3>
 
 <p>
 
-Diseño con identidad digital.
+HRYET Premium
 
 </p>
 
 </div>
 
-</div>
+<div class="admin-card">
+
+<h3>
+
+👥 Nuevos Usuarios
+
+</h3>
+
+<p id="newUsers">
+
+0
+
+</p>
 
 </div>
 
-</section>
+<div class="admin-card">
 
-<!-- ========================= -->
-<!-- GALERÍA -->
-<!-- ========================= -->
+<h3>
 
-<section class="gallery">
+📦 Pedidos Pendientes
 
-<div class="container">
+</h3>
 
-<h2>
+<p id="pendingOrders">
 
-Galería
+0
 
-</h2>
-
-<div class="gallery-grid">
-
-<img src="../assets/images/gallery1.jpg" alt="Galería">
-
-<img src="../assets/images/gallery2.jpg" alt="Galería">
-
-<img src="../assets/images/gallery3.jpg" alt="Galería">
-
-<img src="../assets/images/gallery4.jpg" alt="Galería">
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- ACTIVIDAD -->
-<!-- ========================= -->
-
-<section class="activity">
-
-<div class="container">
-
-<h2>
-
-Actividad Reciente
-
-</h2>
-
-<ul class="activity-list">
-
-<li>
-
-📱 Tu perfil fue visitado recientemente.
-
-</li>
-
-<li>
-
-❤️ Recibiste nuevos Me gusta.
-
-</li>
-
-<li>
-
-👥 Un nuevo usuario comenzó a seguirte.
-
-</li>
-
-<li>
-
-👕 Publicaste un nuevo diseño.
-
-</li>
-
-</ul>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- INSIGNIAS -->
-<!-- ========================= -->
-
-<section class="badges">
-
-<div class="container">
-
-<h2>
-
-Insignias
-
-</h2>
-
-<div class="badges-grid">
-
-<div class="badge-card">
-
-🏆 Creador
-
-</div>
-
-<div class="badge-card">
-
-⭐ Popular
-
-</div>
-
-<div class="badge-card">
-
-🔥 Tendencia
-
-</div>
-
-<div class="badge-card">
-
-💜 HRYET Premium
-
-</div>
+</p>
 
 </div>
 
@@ -533,7 +722,7 @@ Insignias
 
 <p>
 
-Recibe nuevos lanzamientos, promociones exclusivas y noticias.
+Recibe promociones, nuevos lanzamientos y noticias exclusivas.
 
 </p>
 
@@ -591,27 +780,27 @@ Inicio
 
 </a>
 
-<a href="store.html">
-
-Tienda
-
-</a>
-
-<a href="product.html">
-
-Productos
-
-</a>
-
 <a href="dashboard.html">
 
 Dashboard
 
 </a>
 
+<a href="store.html">
+
+Tienda
+
+</a>
+
+<a href="profile.html">
+
+Perfil
+
+</a>
+
 <a href="login.html">
 
-Iniciar Sesión
+Cerrar Sesión
 
 </a>
 
@@ -639,9 +828,9 @@ Iniciar Sesión
 
 <script type="module" src="../js/firebase.js"></script>
 
-<script type="module" src="../js/profile.js"></script>
-
 <script type="module" src="../js/auth.js"></script>
+
+<script type="module" src="../js/admin.js"></script>
 
 <script type="module" src="../js/main.js"></script>
 
