@@ -1,1 +1,163 @@
-Bj
+/* ====================================
+   HRYET NAVBAR
+==================================== */
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:999;
+
+padding:20px 0;
+
+background:rgba(0,0,0,.35);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.navbar{
+
+width:90%;
+
+max-width:1400px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+font-size:34px;
+
+font-weight:800;
+
+letter-spacing:3px;
+
+color:white;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.logo:hover{
+
+color:var(--primary-light);
+
+text-shadow:0 0 20px var(--primary);
+
+}
+
+.navbar ul{
+
+display:flex;
+
+align-items:center;
+
+gap:40px;
+
+}
+
+.navbar ul li{
+
+list-style:none;
+
+}
+
+.navbar ul li a{
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+transition:.3s;
+
+position:relative;
+
+}
+
+.navbar ul li a:hover{
+
+color:var(--primary-light);
+
+}
+
+.navbar ul li a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-8px;
+
+width:0;
+
+height:2px;
+
+background:var(--primary);
+
+transition:.35s;
+
+}
+
+.navbar ul li a:hover::after{
+
+width:100%;
+
+}
+
+.navbar button{
+
+background:var(--primary);
+
+color:white;
+
+padding:14px 28px;
+
+border-radius:50px;
+
+font-weight:700;
+
+}
+
+.navbar button:hover{
+
+background:var(--primary-light);
+
+transform:translateY(-2px);
+
+}
+
+.menu-mobile{
+
+display:none;
+
+font-size:32px;
+
+cursor:pointer;
+
+color:white;
+
+}
