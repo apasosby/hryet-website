@@ -7,56 +7,112 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Iniciar Sesión | HRYET</title>
+<title>
+
+HRYET | Iniciar Sesión
+
+</title>
+
+<link rel="stylesheet" href="../css/variables.css">
 
 <link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/navbar.css">
+
+<link rel="stylesheet" href="../css/login.css">
+
+<link rel="stylesheet" href="../css/footer.css">
+
+<link rel="stylesheet" href="../css/animations.css">
+
+<link rel="stylesheet" href="../css/responsive.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="container">
+<header>
 
-<h1>Iniciar Sesión</h1>
+<nav class="navbar">
 
-<form id="loginForm">
+<div class="logo">
 
-<input
-type="email"
-id="correo"
-placeholder="Correo electrónico"
-required>
-
-<input
-type="password"
-id="password"
-placeholder="Contraseña"
-required>
-
-<button type="submit">
-
-Entrar
-
-</button>
-
-</form>
-
-<p>
-
-¿No tienes una cuenta?
-
-<a href="register.html">
-
-Regístrate aquí
-
-</a>
-
-</p>
+HRYET
 
 </div>
 
-<script type="module" src="../js/auth.js"></script>
+<ul>
 
-</body>
+<li><a href="../index.html">Inicio</a></li>
 
-</html>
+<li><a href="store.html">Tienda</a></li>
+
+<li><a href="profile.html">Perfil QR</a></li>
+
+<li><a href="register.html">Crear Cuenta</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="login">
+
+<div class="login-box">
+
+<div class="login-logo">
+
+HRYET
+
+</div>
+
+<h2 class="login-title">
+
+Bienvenido
+
+</h2>
+
+<p class="login-text">
+
+Inicia sesión para acceder a tu identidad digital, pedidos y perfil QR.
+
+</p>
+
+<form
+id="loginForm"
+class="login-form">
+
+<label>
+
+Correo electrónico
+
+</label>
+
+<input
+
+type="email"
+
+id="correo"
+
+placeholder="correo@ejemplo.com"
+
+required>
+
+<label>
+
+Contraseña
+
+</label>
+
+<input
+
+type="password"
+
+id="password"
+
+placeholder="********"
+
+required>
