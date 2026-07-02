@@ -1,1 +1,87 @@
-T
+:root{
+
+/* ==========================
+   COLORES
+========================== */
+
+--primary:#8A2BE2;
+--primary-light:#B266FF;
+--primary-dark:#5B0EB2;
+
+--black:#050505;
+--black-light:#111111;
+--white:#FFFFFF;
+
+--gray:#B8B8B8;
+
+--success:#18C964;
+--danger:#FF4D4D;
+--warning:#F5A623;
+
+
+/* ==========================
+   FONDOS
+========================== */
+
+--background:#050505;
+
+--card:rgba(255,255,255,.05);
+
+--glass:rgba(255,255,255,.08);
+
+--border:rgba(255,255,255,.10);
+
+
+/* ==========================
+   TIPOGRAFÍA
+========================== */
+
+--font-main:"Outfit",sans-serif;
+
+--title-size:72px;
+
+--subtitle-size:42px;
+
+--text-size:18px;
+
+--small-size:14px;
+
+
+/* ==========================
+   ESPACIADOS
+========================== */
+
+--radius:22px;
+
+--padding:25px;
+
+--gap:30px;
+
+
+/* ==========================
+   SOMBRAS
+========================== */
+
+--shadow:
+
+0 0 25px rgba(138,43,226,.30);
+
+--shadow-hover:
+
+0 0 45px rgba(178,102,255,.45);
+
+
+/* ==========================
+   TRANSICIONES
+========================== */
+
+--transition:.35s ease;
+
+
+/* ==========================
+   CONTENEDOR
+========================== */
+
+--container:1400px;
+
+}
