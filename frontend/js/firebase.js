@@ -1,34 +1,26 @@
-// ==============================
+// ======================================
 // HRYET - Firebase
-// ==============================
+// ======================================
 
 // Firebase App
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-// Authentication
-import {
-  getAuth
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+// Firebase Authentication
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-// Firestore
-import {
-  getFirestore
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+// Firebase Firestore
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// Storage
-import {
-  getStorage
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+// Firebase Storage
+import { getStorage } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 
-// Analytics
-import {
-  getAnalytics
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+// Firebase Analytics
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 
 
-// ==============================
-// Configuración Firebase
-// ==============================
+// ======================================
+// Configuración de Firebase
+// ======================================
 
 const firebaseConfig = {
 
@@ -42,50 +34,47 @@ const firebaseConfig = {
 
   messagingSenderId: "839699465873",
 
-  appId: "1:839699465873:web:4cbb72d912c676b537a130",
+  appId: "1:839699465873:web:2eafc5c3474388c237a130",
 
-  measurementId: "G-8DK6LSF1TT"
+  measurementId: "G-R3W2ZT6670"
 
 };
 
 
-// ==============================
+// ======================================
 // Inicializar Firebase
-// ==============================
+// ======================================
 
 const app = initializeApp(firebaseConfig);
 
 
-// Analytics
+// ======================================
+// Servicios de Firebase
+// ======================================
+
+const auth = getAuth(app);
+
+const db = getFirestore(app);
+
+const storage = getStorage(app);
+
 const analytics = getAnalytics(app);
 
 
-// Authentication
-const auth = getAuth(app);
-
-
-// Firestore
-const db = getFirestore(app);
-
-
-// Storage
-const storage = getStorage(app);
-
-
-// ==============================
-// Exportaciones
-// ==============================
+// ======================================
+// Exportar servicios
+// ======================================
 
 export {
 
   app,
 
-  analytics,
-
   auth,
 
   db,
 
-  storage
+  storage,
+
+  analytics
 
 };
