@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -7,9 +8,27 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Perfil | HRYET</title>
+<title>
 
-<link rel="stylesheet" href="../css/perfil.css">
+HRYET | Perfil
+
+</title>
+
+<link rel="stylesheet" href="../css/variables.css">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/navbar.css">
+
+<link rel="stylesheet" href="../css/profile.css">
+
+<link rel="stylesheet" href="../css/footer.css">
+
+<link rel="stylesheet" href="../css/animations.css">
+
+<link rel="stylesheet" href="../css/responsive.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
@@ -17,158 +36,616 @@
 
 <header>
 
+<nav class="navbar">
+
 <div class="logo">
+
+<a href="../index.html">
 
 HRYET
 
+</a>
+
 </div>
 
-<nav>
+<ul>
 
-<a href="../index.html">Inicio</a>
+<li><a href="../index.html">Inicio</a></li>
 
-<a href="dashboard.html">Dashboard</a>
+<li><a href="store.html">Tienda</a></li>
 
-<a href="store.html">Tienda</a>
+<li><a href="login.html">Iniciar Sesión</a></li>
+
+</ul>
 
 </nav>
 
 </header>
 
-<main class="profile">
+<section class="profile">
 
-<div class="profile-card">
+<div class="profile-header">
 
 <img
-id="fotoPerfil"
-src="https://via.placeholder.com/180"
-alt="Foto de Perfil">
 
-<h1 id="userName">
+src="../assets/images/avatar.png"
 
-Usuario
+id="profileImage"
+
+class="profile-avatar"
+
+alt="Perfil">
+
+<h1 id="profileName">
+
+Nombre del Usuario
 
 </h1>
 
-<p id="bio">
+<p id="profileUsername">
 
-Tu identidad digital comienza aquí.
+@usuario
 
 </p>
 
-<div class="stats">
+<p id="profileBio">
 
-<div>
+Aquí aparecerá la biografía del usuario.
 
-<h2 id="likesCount">0</h2>
+</p>
 
-<p>❤️ Likes</p>
+<div class="verified-badge">
 
-</div>
-
-<div>
-
-<h2 id="followersCount">0</h2>
-
-<p>👥 Seguidores</p>
-
-</div>
-
-<div>
-
-<h2 id="scanCount">0</h2>
-
-<p>📷 Escaneos</p>
+✅ Cuenta Verificada
 
 </div>
 
 </div>
 
-<div class="social">
+<div class="profile-stats">
 
-<a id="instagram" href="#" target="_blank">
+<div class="stat-card">
 
-Instagram
+<h2 id="profileScans">
 
-</a>
-
-<a id="facebook" href="#" target="_blank">
-
-Facebook
-
-</a>
-
-<a id="tiktok" href="#" target="_blank">
-
-TikTok
-
-</a>
-
-</div>
-
-<h2>
-
-🎵 Música
+0
 
 </h2>
 
-<iframe
+<span>
 
-id="spotify"
+Escaneos
 
-style="border-radius:12px"
+</span>
 
-src=""
+</div>
 
-width="100%"
+<div class="stat-card">
 
-height="152"
+<h2 id="profileLikes">
 
-frameborder="0"
+0
 
-allowfullscreen
+</h2>
 
-loading="lazy">
+<span>
 
-</iframe>
+Me gusta
+
+</span>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="profileFollowers">
+
+0
+
+</h2>
+
+<span>
+
+Seguidores
+
+</span>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="profileFollowing">
+
+0
+
+</h2>
+
+<span>
+
+Siguiendo
+
+</span>
+
+</div>
+
+</div>
+<!-- ========================= -->
+<!-- CÓDIGO QR -->
+<!-- ========================= -->
+
+<div class="profile-section">
 
 <h2>
 
-📷 Mi QR
+Mi Código QR
 
 </h2>
+
+<div class="qr-box">
+
+<img
+
+src="../assets/images/qr-demo.png"
+
+id="profileQR"
+
+alt="Código QR">
+
+<p>
+
+Escanea este código para visitar este perfil.
+
+</p>
+
+<button id="downloadQR">
+
+Descargar QR
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- REDES SOCIALES -->
+<!-- ========================= -->
+
+<div class="profile-section">
+
+<h2>
+
+Redes Sociales
+
+</h2>
+
+<div class="social-links">
+
+<a id="instagramLink" href="#" target="_blank">
+
+📷 Instagram
+
+</a>
+
+<a id="tiktokLink" href="#" target="_blank">
+
+🎵 TikTok
+
+</a>
+
+<a id="facebookLink" href="#" target="_blank">
+
+📘 Facebook
+
+</a>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- ACCIONES -->
+<!-- ========================= -->
+
+<div class="profile-actions">
+
+<button id="followBtn">
+
+❤️ Seguir
+
+</button>
+
+<button id="likeBtn">
+
+👍 Me gusta
+
+</button>
+
+<button id="shareBtn">
+
+📤 Compartir Perfil
+
+</button>
+
+</div>
+
+<!-- ========================= -->
+<!-- ENLACE DEL PERFIL -->
+<!-- ========================= -->
+
+<div class="profile-link">
+
+...
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CAMISETAS -->
+
+
+<h3>
+
+Enlace Público
+
+</h3>
 
 <input
 
 type="text"
 
-id="qrLink"
+id="profileUrl"
+
+value="https://hryet.com/u/usuario"
 
 readonly>
 
-<button onclick="copiarQR()">
+<button id="copyLink">
 
 Copiar enlace
 
 </button>
 
-<br><br>
+</div>
+<!-- ========================= -->
+<!-- CAMISETAS -->
+<!-- ========================= -->
 
-<button id="likeButton">
+<section class="profile-products">
 
-❤️ Dar Like
+<div class="container">
 
-</button>
+<h2>
+
+Camisetas HRYET
+
+</h2>
+
+<div class="products">
+
+<div class="product-card">
+
+<img
+
+src="../assets/images/shirt1.png"
+
+alt="Camiseta">
+
+<h3>
+
+HRYET Premium
+
+</h3>
+
+<p>
+
+Diseño personalizado.
+
+</p>
 
 </div>
 
-</main>
+<div class="product-card">
+
+<img
+
+src="../assets/images/shirt2.png"
+
+alt="Camiseta">
+
+<h3>
+
+Luxury Edition
+
+</h3>
+
+<p>
+
+Edición exclusiva.
+
+</p>
+
+</div>
+
+<div class="product-card">
+
+<img
+
+src="../assets/images/shirt3.png"
+
+alt="Camiseta">
+
+<h3>
+
+Custom QR
+
+</h3>
+
+<p>
+
+Diseño con identidad digital.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- GALERÍA -->
+<!-- ========================= -->
+
+<section class="gallery">
+
+<div class="container">
+
+<h2>
+
+Galería
+
+</h2>
+
+<div class="gallery-grid">
+
+<img src="../assets/images/gallery1.jpg" alt="Galería">
+
+<img src="../assets/images/gallery2.jpg" alt="Galería">
+
+<img src="../assets/images/gallery3.jpg" alt="Galería">
+
+<img src="../assets/images/gallery4.jpg" alt="Galería">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- ACTIVIDAD -->
+<!-- ========================= -->
+
+<section class="activity">
+
+<div class="container">
+
+<h2>
+
+Actividad Reciente
+
+</h2>
+
+<ul class="activity-list">
+
+<li>
+
+📱 Tu perfil fue visitado recientemente.
+
+</li>
+
+<li>
+
+❤️ Recibiste nuevos Me gusta.
+
+</li>
+
+<li>
+
+👥 Un nuevo usuario comenzó a seguirte.
+
+</li>
+
+<li>
+
+👕 Publicaste un nuevo diseño.
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- INSIGNIAS -->
+<!-- ========================= -->
+
+<section class="badges">
+
+<div class="container">
+
+<h2>
+
+Insignias
+
+</h2>
+
+<div class="badges-grid">
+
+<div class="badge-card">
+
+🏆 Creador
+
+</div>
+
+<div class="badge-card">
+
+⭐ Popular
+
+</div>
+
+<div class="badge-card">
+
+🔥 Tendencia
+
+</div>
+
+<div class="badge-card">
+
+💜 HRYET Premium
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- NEWSLETTER -->
+<!-- ========================= -->
+
+<section class="newsletter">
+
+<div class="container">
+
+<h2>
+
+Únete a la comunidad HRYET
+
+</h2>
+
+<p>
+
+Recibe nuevos lanzamientos, promociones exclusivas y noticias.
+
+</p>
+
+<form id="newsletterForm" class="newsletter-form">
+
+<input
+
+type="email"
+
+id="newsletterEmail"
+
+placeholder="Tu correo electrónico"
+
+required>
+
+<button type="submit">
+
+Suscribirme
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+<div class="footer-logo">
+
+<a href="../index.html">
+
+HRYET
+
+</a>
+
+</div>
+
+<p>
+
+Más que una camiseta. Tu identidad digital.
+
+</p>
+
+<div class="footer-links">
+
+<a href="../index.html">
+
+Inicio
+
+</a>
+
+<a href="store.html">
+
+Tienda
+
+</a>
+
+<a href="product.html">
+
+Productos
+
+</a>
+
+<a href="dashboard.html">
+
+Dashboard
+
+</a>
+
+<a href="login.html">
+
+Iniciar Sesión
+
+</a>
+
+</div>
+
+<div class="social">
+
+<a href="#">Instagram</a>
+
+<a href="#">TikTok</a>
+
+<a href="#">Facebook</a>
+
+<a href="#">YouTube</a>
+
+</div>
+
+<small>
+
+© 2026 HRYET. Todos los derechos reservados.
+
+</small>
+
+</footer>
+
+<script type="module" src="../js/firebase.js"></script>
 
 <script type="module" src="../js/profile.js"></script>
 
-<script type="module" src="../js/qr.js"></script>
-
 <script type="module" src="../js/auth.js"></script>
+
+<script type="module" src="../js/main.js"></script>
+
+<script type="module" src="../js/app.js"></script>
 
 </body>
 
